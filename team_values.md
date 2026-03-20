@@ -1,4 +1,4 @@
-## 📜 Code of Conduct
+##  Code of Conduct
  
 | #  | Principle          | Description                                                        |
 |----|--------------------|--------------------------------------------------------------------|
@@ -68,10 +68,10 @@ Each team member agrees to the following obligations:
  
 | Channel              | Purpose                                      | Response Time       |
 |----------------------|----------------------------------------------|---------------------|
-| Whatsapp | Daily communication, quick questions          | Within 24 hours     |
+| Whatsapp             | Daily communication, quick questions          | Within 24 hours     |
 | Email                | Formal or important notices                   | Within 24 hours     |
 | GitHub               | Code reviews, issues, pull requests           | Within 48 hours     |
-| In-Person / Zoom     | Weekly team meetings, sprint planning         | As scheduled        |
+| Zoom                 | Weekly team meetings, sprint planning         | As scheduled        |
  
 ---
  
@@ -80,7 +80,7 @@ Each team member agrees to the following obligations:
 | Detail          | Information                            |
 |-----------------|----------------------------------------|
 | **Frequency**   | Weekly (minimum)                       |
-| **Day & Time**  | *To be determined by team consensus*   |
+| **Day & Time**  | Thursday (20/03/2025)                  |
 | **Platform**    | In-person / Zoom (as agreed)           |
 | **Minutes**     | Recorded by a rotating note-taker      |
  
