@@ -106,6 +106,7 @@ By contributing to this project, all team members acknowledge that they have rea
 | William Samuel Mulya    |           |      |
 | Eddie Zheng En Yung     |           |      |
 | Muhammad Jordan Arrazi  |           |      |
- 
+| Muhammad Brian  Subekti      |               |   |
+|Pranusha Shetty |  |   |
 ---
  
