@@ -8,3 +8,4 @@
 | Eddie Zheng En   | Yung      | s4795623       | EddieYung2335   | eddiezhengen.yung@student.uq.edu.au |
 | Muhammad Jordan  | Arrazi    | s4980033       | jordanaziz18    | m.arrazi@student.uq.edu.au       |
 | Muhammad Brian   | Subekti   | s4980031       | MasterTapz      | m.subekti@student.uq.edu.au       |
+| Pranusha   | Shetty   | s5028127       | pranusha16      | p.shetty@student.uq.edu.au       |
