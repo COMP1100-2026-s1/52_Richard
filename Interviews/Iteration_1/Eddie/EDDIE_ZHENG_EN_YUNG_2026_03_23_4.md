@@ -1,0 +1,160 @@
+# SkillPath — User Research Interview
+
+## Interview Metadata
+
+| Field              | Details                                                                                                                                                                                                                                                                                                             |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Interviewee**    | ___                                                                                                                                                                                                                                                                                                                 |
+| **Interviewer**    | Eddie Zheng En Yung                                                                                                                                                                                                                                                                                                 |
+| **Date**           | 24-03-2026                                                                                                                                                                                                                                                                                                          |
+| **Duration**       | 3:04                                                                                                                                                                                                                                                                                                                |
+| **Location**       | Sir James Foots Building                                                                                                                                                                                                                                                                                            |
+| **Recording Link** | https://uq-my.sharepoint.com/:u:/g/personal/s4795623_uq_edu_au/IQD6R080_USrSpIKntyOyn-7Aa6xjVhHpTvc0lYAe-OM98I?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3rtdly |
+| **Course**         | COMP1100 Software Innovation Project                                                                                                                                                                                                                                                                                |
+| **Project**        | SkillPath                                                                                                                                                                                                                                                                                                           |
+
+---
+
+## Transcript
+
+
+**Eddie** 
+Good afternoon. My name is Eddie, and I'm a student at University of Queensland. Right, this interview is being conducted as part of our COMP1100 Software Innovation project. So this interview will take almost like ten minutes. Is that all right for you?
+
+**Interviewee** 
+Yeah.
+
+**Eddie** 
+Right. Cool. So also I want to ask your permission, can I record this whole interview?
+
+**Interviewee** 
+Okay.
+
+**Eddie**
+Okay, cool. So yeah. So how did you decide which course you're going to take for this semester?
+
+**Interviewee** 
+Well, I have my thesis on this semester, so I chose two relatively easy courses.
+
+**Eddie** 
+Right. Right. So you chose some easy courses for this semester. All right. That's fair enough. Is there anything you wish to know before you actually enrol in the course?
+
+**Interviewee** 
+Uh, not at this point, no.
+
+**Eddie** 
+Cool, cool. Okay.
+
+**Interviewee** 
+Have you read the course profiles?
+
+**Eddie** 
+Yeah, like really—
+
+**Interviewee** 
+Yeah, just read them before.
+
+**Eddie** 
+Mm. Okay. So maybe think about last time you had to pick an elective course, what did you do? Did you do some research, like asking people about what the course is going to be?
+
+**Interviewee** 
+Well, I just thought it was interesting.
+
+**Eddie** 
+Right. Okay. So have you ever... I mean, yeah, you did pick some course mainly because it is easy, right?
+
+**Interviewee** 
+Yeah.
+
+**Eddie** 
+Right. So how did it turn out? Do you feel like it is worth your time?
+
+**Interviewee** 
+I feel like the easy courses you can focus on other courses more, so it's worth it.
+
+**Eddie** 
+Right. It is worth it, right? So if I ask you to list all the skills that you have developed from your degree so far, how easy would it be?
+
+**Interviewee** 
+Uh, it depends.
+
+**Eddie** 
+Right.
+
+**Interviewee** 
+Probably not very easy.
+
+**Eddie** 
+Not very easy, right? Okay. So maybe name one of your favourite courses so far. Can you explain what skill you have developed or gained from that specific course?
+
+**Interviewee** 
+Mm. Well, maybe MECH3780 is pretty cool.
+
+**Eddie** 
+Right. Right. So what skill do you think you learnt from that specific—
+
+**Interviewee** 
+So you learn how to manipulate the finite element models and you can simulate like airflow and... So it's pretty cool.
+
+**Eddie** 
+Right. Right. So did you know you were going to develop that specific skill before you enrolled in the course?
+
+**Interviewee** 
+Uh, yeah.
+
+**Eddie** 
+Right. Just based on the ECP?
+
+**Interviewee** 
+Oh, yes. Just based on ECP.
+
+**Eddie** 
+Right. Right. Cool. Okay, did you have any rough idea of what job or role you're going to do after you graduate?
+
+**Interviewee** 
+Um, yeah.
+
+**Eddie** 
+Right. Like, how confident do you feel your courses are leading you all the way to that direction?
+
+**Interviewee** 
+Uh, just depends.
+
+**Eddie** 
+Depends.
+
+**Interviewee**
+It's hard to say.
+
+**Eddie** 
+Right. Do you think there is a gap in between?
+
+**Interviewee** 
+Sorry?
+
+**Eddie** 
+Do you think there is a gap in between?
+
+**Interviewee** 
+Gap in between what?
+
+**Eddie** 
+Like the skills you learn from your courses and the actual real life job.
+
+**Interviewee** 
+Yes, definitely.
+
+**Eddie** 
+Right. Right. Okay. So imagine you have a time machine right now, you can travel back to your very first semester at UQ, what would you do differently about how you choose a course?
+
+**Interviewee** 
+Um, I don't know. I kinda like my courses.
+
+**Eddie** 
+Oh, you kinda like them. Okay.
+
+**Interviewee** 
+But I'd say maybe have a bit more direction. Just sort of focus on one specific engineering.
+
+**Eddie** 
+Okay. Okay, I see. All right. Thank you very much. That's it for my survey.

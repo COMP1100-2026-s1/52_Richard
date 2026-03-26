@@ -1,0 +1,133 @@
+# SkillPath — User Research Interview
+
+## Interview Metadata
+
+| Field              | Details                                                                                                                                                                                                                                                                                                             |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Interviewee**    | ___                                                                                                                                                                                                                                                                                                                 |
+| **Interviewer**    | Eddie Zheng En Yung                                                                                                                                                                                                                                                                                                 |
+| **Date**           | 24/03/2026                                                                                                                                                                                                                                                                                                          |
+| **Duration**       | 4:52                                                                                                                                                                                                                                                                                                                |
+| **Location**       | Sir James Foots Building                                                                                                                                                                                                                                                                                            |
+| **Recording Link** | https://uq-my.sharepoint.com/:u:/g/personal/s4795623_uq_edu_au/IQAvvUO53gXdTYQdVPIBUI3JAYyg213tmrt6szsJNb7CFbg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=exgNYG |
+| **Course**         | COMP1100 Software Innovation Project                                                                                                                                                                                                                                                                                |
+| **Project**        | SkillPath                                                                                                                                                                                                                                                                                                           |
+
+---
+
+## Transcript
+
+
+**Eddie** 
+Hi, good afternoon. My name is Eddie, and I'm a student at University of Queensland. Right. So this interview is being conducted as part of my COMP1100 Software Innovation project, and it will takes almost 10 minutes to do the interview. Do you mind to do it?
+
+**Interviewee** 
+Yeah, it's okay.
+
+**Eddie** 
+Right. Also, I would like to ask for your permission. Can I record the interview?
+
+**Interviewee** 
+Yes, of course.
+
+**Eddie** 
+Right. Okay. So let's just jump right into it. So how did you decide which course you're going to take for this semester?
+
+**Interviewee** 
+So for this semester, I decided based on just looking at prereqs and which course I could take, and it was... I changed degrees, so I had to look at that for multiple different things. It was kinda confusing to try and find all that, but it was mostly just whatever I had to do for the degree.
+
+**Eddie** 
+Just whatever you had to do, right?
+
+**Interviewee** 
+Yeah.
+
+**Eddie** 
+Is there anything you wish to know before enrolling, like, for any specific course?
+
+**Interviewee** 
+I think that from what I find when I'm picking courses, a lot of the course profiles are really vague. And that leads to, like, when I have an option between two elective courses, for example, and, you know, ones where you have to take two or three or whatever, sometimes it's really unclear the difference between courses and the different things I'll learn from them.
+
+**Eddie** 
+Do you still remember last time you picked an elective course? What did you do? Did you actually do a lot of research, asking people, looking through the ECPs?
+
+**Interviewee** 
+I think I went based off what I'd heard other people say about the courses, and then I went and looked at the ECP, and I think from there I decided that, yeah, from the assessment items, I think I went, "Yeah, this should be interesting."
+
+**Eddie** 
+Right. So do you feel confident of your choice?
+
+**Interviewee** 
+Uh, I mean, I ended up really enjoying that course, but I remember for about the first half of the course I was really sceptical that I was gonna enjoy it.
+
+**Eddie** 
+Right. I got you. Okay. Have you ever picked any course mainly because it is an easy course or it just simply fit your timetables?
+
+**Interviewee** 
+Uh, yeah. I find that a lot with... Yeah.
+
+**Eddie** 
+Right. Okay. So how did it turn out? Do you feel like it is something you actually want to learn or maybe do you think it was worth your time?
+
+**Interviewee** 
+I think it's... I've had a mixed bag with those where sometimes I end up really enjoying the course, and really find it useful, but a lot of the time it feels like it's really vague and just really a gamble because it's hard to really tell before you take the course.
+
+**Eddie** 
+Yeah. I see. I see. Okay. So this question might be a bit hard. If I ask you to list all of the skills that you have developed from your degree so far, how easy would it be? Is it going to be very hard or is it going to be easy?
+
+**Interviewee** 
+I think it's hard to list. But I think that's just mostly because I'm doing a dual degree, so it's a wide range of skills I'm acquiring.
+
+**Eddie** 
+Yeah. I see. I see. Okay. So maybe name one of your favourite courses you finished recently. Can you explain what skill you have developed or gained from that specific course?
+
+**Interviewee** 
+Um, yeah. One of my favourite courses I took recently was an astrophysics course as an elective. I took that because it was just something I was really interested in, and I ended up learning a lot of techniques that ended up affecting a lot of my other stuff. Yeah.
+
+**Eddie** 
+Right. Did you know you were going to learn all of these skills before you actually enrolled in the course?
+
+**Interviewee** 
+I had no idea. I took it assuming that it would be learning a bunch of fun facts, effectively.
+
+**Eddie** 
+I see. If you knew you were going to learn that stuff, would it be more confident for you to—
+
+**Interviewee** 
+Oh, definitely. Definitely.
+
+**Eddie** 
+Yeah.
+
+**Interviewee** 
+Yeah.
+
+**Eddie** 
+Okay. So do you have any rough idea of what job or role you want to do after you graduate?
+
+**Interviewee** 
+Uh, I mean, in the sense that I've narrowed it down to a few things, but you know, still kind of figuring that out.
+
+**Eddie** 
+Right.
+
+**Interviewee** 
+Yeah.
+
+**Eddie** 
+But just for now, do you feel like the courses you've been taking are leading you to the direction of the jobs?
+
+**Interviewee** 
+Yeah, I'd say so. I think definitely. But, yeah.
+
+**Eddie** 
+Okay. Cool. So maybe imagine you have a time machine, you can travel back to your very first semester at UQ knowing what you know right now, what would you do differently when you're going to choose a course?
+
+**Interviewee** 
+Uh, I think I'd definitely... I remember in my first semester, for example, I didn't even know course profiles existed. So there's a lot of stuff with that, but also I think I'd try and track more stuff to do with the assessments, 'cause I've found that that's a much easier way to gauge what's in the course. Like looking at assessments from previous years and stuff.
+
+**Eddie** 
+Right. Okay. Yep. That's it. That's it for my interview. Thank you very much.
+
+**Interviewee** 
+Yeah. All good.

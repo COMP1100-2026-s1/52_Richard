@@ -1,0 +1,145 @@
+# SkillPath — User Research Interview
+
+## Interview Metadata
+
+| Field              | Details                                                                                                                                                                                                                                                                                                             |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Interviewee**    | ___                                                                                                                                                                                                                                                                                                                 |
+| **Interviewer**    | Eddie Zheng En Yung                                                                                                                                                                                                                                                                                                 |
+| **Date**           | 25-03-2026                                                                                                                                                                                                                                                                                                          |
+| **Duration**       | 9:20                                                                                                                                                                                                                                                                                                                |
+| **Location**       | Indooroopilly Shopping Center                                                                                                                                                                                                                                                                                       |
+| **Recording Link** | https://uq-my.sharepoint.com/:u:/g/personal/s4795623_uq_edu_au/IQBJDu7ognc7R6ESvgOdCCMvAVGUckJI5toLKFJWC0mD3iE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=YeKkih |
+| **Course**         | COMP1100 Software Innovation Project                                                                                                                                                                                                                                                                                |
+| **Project**        | SkillPath                                                                                                                                                                                                                                                                                                           |
+
+---
+
+## Transcript
+
+
+**Eddie** 
+Hi, my name is Eddie, and I'm a student at University of Queensland. This interview is being conducted as part of our COMP1100 Software Innovation Project. We are exploring how students navigate course selection and career planning, and your input will help us to design a better tool to support that process. This interview will take about ten to fifteen minutes. Is that all right?
+
+**Interviewee** 
+Yes.
+
+**Eddie** 
+With your permission, I'd like to record the interview so that I can accurately capture your responses. Is that all right?
+
+**Interviewee** 
+It's okay.
+
+**Eddie** 
+Okay. So before we start, do you have any question for me?
+
+**Interviewee** 
+No.
+
+**Eddie** 
+Okay, let's go. How did you decide which course to take for this semester?
+
+**Interviewee** 
+Um, most of my courses are compulsory, so basically I do not have to choose which course I need to take.
+
+**Eddie** 
+Right. Okay. So even though your course is compulsory, did you have anything you wish to know before you enrol in the specific course?
+
+**Interviewee** 
+Yes. Like I want the overview of the course, like what we are going to learn. If there is like a list of different topics on each week, that would be nice.
+
+**Eddie** 
+Okay. So I guess you have selected an elective course, right? So walk me through the last time you had to pick an elective course. What did you do?
+
+**Interviewee** 
+Um, I only have to choose one elective course each year. So basically, I have chosen two elective courses so far in this degree. And I think I usually look at the course profile on the—
+
+**Eddie** 
+ECP.
+
+**Interviewee** 
+—website, like the ECP, yeah, on the website. But there's not a lot of information that I can look for. I usually can only see about like the contact time, like how many lectures and how many hours of tutorial each week, something like that. But there is like an overview. I mean, there's like a brief description of the course, but it's not in detail.
+
+**Eddie** 
+Okay. Did you ask any peers or maybe your friends about the course?
+
+**Interviewee** 
+I mean, at some point, yes, 'cause some people would choose different electives based on their interest. But it's hard 'cause we're studying in the same year. So probably most of the people will choose the same elective.
+
+**Eddie** 
+I see. Have you ever picked a course mainly because it is an easy course or simply fit your timetable?
+
+**Interviewee** 
+Oh, yes. 'Cause I'm studying Vet Tech, and most of the compulsory courses, we have a lot of practicals and workshops, which basically I have to go to at least three times a week, and it's very exhausting at some point. So I have chosen an elective which is an external course that I didn't really have to go there for lectures 'cause it's basically online. So yeah.
+
+**Eddie** 
+Okay. So for that specific course, how did that turn out? Do you feel like you are interested in that course, or do you feel it is worth your time?
+
+**Interviewee** 
+I think because it's external, so we have like only maybe two hours of recording each week that we have to really listen and look at. And the other time, 'cause we have a very big assignment every four weeks. So basically that is like a lot of questions on each topic. And based on the lectures, based on the recording, we still have to find our own resources. We have to look at so many articles to find the answers. So I think that at some point that is not as easy as the compulsory course, 'cause we have to do a lot of extra readings, and I am not really good at readings and readings, so basically it is quite hard for me. 
+
+**Eddie** 
+Okay, I see. So the course turned out it's not exactly the same as you expected before enrolling in the course, right?
+
+**Interviewee** 
+Yeah, but I learnt a lot because I read a lot. 
+
+**Eddie** 
+Okay, I see. So if I ask you to list the skills that you have developed from your degree so far, how easy would it be?
+
+**Interviewee** 
+I don't think it's easy 'cause we have so many things that we have to remember, not only like knowledge, it's also like clinical skills and practical skills. 'Cause for example, practical skills, you learn, you remember, but then you have to do it like, you have to have a go, like hands-on skills that is completely different from what you have learnt and remember.
+
+**Eddie** 
+Okay.
+
+**Interviewee** 
+So.
+
+**Eddie** 
+I see. So it's kinda difficult, right?
+
+**Interviewee** 
+Yeah.
+
+**Eddie** 
+Okay. Maybe for now, just name one of your favourite courses or a course you have finished recently. Can you explain what skills that you have developed or gained from that course?
+
+**Interviewee** 
+Um, probably from last semester. The one is called VETS3048, as I remember, which is called... I forgot the name.
+
+**Eddie** 
+That's okay.
+
+**Interviewee** 
+But basically it's about learning clinical skills. That means like how we have to prepare before the animal goes for a surgery, where we have to prepare what solutions, what clinical settings, what instruments we have to prepare and how to prepare.
+
+**Eddie** 
+Mm. Did you know you were going to develop that specific skill before you enrolled? Maybe just based on the ECP.
+
+**Interviewee** 
+Um, how to say? They will list out, oh, you are going to learn clinical skills, practical skills, but I don't know what exactly that is.
+
+**Eddie** 
+Okay. Right. So do you have any rough idea of what job or role you want to do after you graduate?
+
+**Interviewee** 
+Um, probably a vet nurse or like a vet tech.
+
+**Eddie** 
+Okay. So do you feel confident that your current courses are leading you all the way to your job?
+
+**Interviewee** 
+Um, how to say? I mean, obviously the courses, I have learnt a lot from the courses, but I'm not really confident 'cause I think working as a vet tech, it takes time, and I need to gain more skills and experience to build up my confidence.
+
+**Eddie** 
+Mm. Okay. Right. Understand. Imagine you have a time machine that you can travel back to your very first semester, but knowing what you know right now, what would you do differently about how you choose a course? Maybe an elective course.
+
+**Interviewee** 
+Yes. I think I would... Like, there's a course called VETS1060, which is actually a course for Vet Sci students, and that was really, really hard 'cause I have no idea what I'm learning at that time. I just chose that because I thought I was going to transfer to Vet Sci, and so I chose that course. But then I realised... That was my first semester, and I didn't really get ready for that environment. And I had never learnt that kind of stuff before. So for me, I think I would choose another interesting course that I really interested in instead of choosing something that challenging.
+
+**Eddie** 
+Okay. Awesome. All right. That's it for my interview. Thank you very much.
+
+**Interviewee** 
+Thank you.
