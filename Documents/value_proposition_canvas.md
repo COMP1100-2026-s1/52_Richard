@@ -39,14 +39,32 @@ consistently tell which courses contribute to this so far.
 
 - **Critical information hidden until after enrolment** - Timetables, actual weekly workload, and sometimes even syllabi are not available before the course actually start. This forced decisions based on incomplete information.
 
+#### Social Pains
+
+- **Embarrassment when unable to explain what they have learnt** - Especially in interview but struggled to articulate skills is socially uncomfortable.
+
 #### Emotional Pains
 
 - **"Easy course" regret** - Multiple students specifically regretted taking "chill" courses because they felt they wasted an elective slot without learning anything valuable.
 
 - **Feeling like the degree is "too broad" to lead anywhere** - Students who couldn't picture their career path described the feeling like they were going in blind.
 
-#### Social Pains
+### Customer Gains
 
-- **Embarrassment when unable to explain what they have learnt** - Especially in interview but struggled to articulate skills is socially uncomfortable.
+#### Required Gains
+
+- **Accurate, practical course information in one place** - Student need detailed workload, assessment style, weekly topics, and lecturer quality presented clearly and consistently before they enrol.
+
+- **Understanding which skills a course develops** - Not vague statements (e.g. you will be learning Python language) but specific, details, and concrete skill breakdowns (techniques, methods, etc.)
+
+- **Clear view of how courses connect across semesters** - Students need to visualise prerequisite flows, recommended sequences, and how their choices now affect options later.
+
+#### Expected Gains
+
+- **Career pathway clarity** - Students want see how their course selections map to specific career outcomes. They feel a gap between what they study and where they are headed.
+
+#### Desired Gains
+
+- **Skill progress tracking over time** - "Skill Tree" or milestone tracker so students can monitor their development across their degree. This also helps with CV building.
 
 ## Part 2:Value Map
