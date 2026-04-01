@@ -68,3 +68,23 @@ consistently tell which courses contribute to this so far.
 - **Skill progress tracking over time** - "Skill Tree" or milestone tracker so students can monitor their development across their degree. This also helps with CV building.
 
 ## Part 2:Value Map
+
+### Products and Services
+
+- **Course-to-skill mapping engine** - The core tool that visually connects each course to the specific skills it develops.
+
+- **Career pathway visualiser** - Students can visualiser how courses and skills connect to specific career outcomes, so they can see  where their degree is leading.
+
+- **Course comparison tool** - Lets students compare courses side-by-side on key attributes.
+
+### Pain Relievers
+
+- ****
+
+### Gain Creators
+
+- **Course-to-skill-to-career mapping** - The mapping engine connects skills toward potential career outcomes, so students can visualise the value of each course.
+
+- **Degree pathway visualisation** - Interactive progression maps let students plan not just one semester but their entire remaining degree, seeing how today's choices open or close future doors.
+
+- **Clear, decision-friendly course info** - The dashboard consolidates everything students need into one interface, reduce the workload on doing research for specific course.
