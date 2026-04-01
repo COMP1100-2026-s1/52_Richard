@@ -23,9 +23,12 @@
 - QR code
 
 **Customer Relationships**
-- ...
+- Self-service
+- Communities
 
 **Revenue Streams**
 - Ads 
-- ...
+- Free basic feature, paid upgrade for career feature
+- Sell it to universities as a tool
+
 
