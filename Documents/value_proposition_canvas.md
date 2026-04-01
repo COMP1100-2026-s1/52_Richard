@@ -16,7 +16,7 @@ Our primary customer segment is **university students with elective flexibility 
 
 - **Select courses each semester** - Students must decide which courses to enrol in, often under time pressure during enrolment windows.
 
-- **Research course information before enrolling** - Students actively try to find out what a course actually involves (workload, assessment style, content, lecturer quality) but currently rely heavily on combinition of UQ website, Reddit, friends, and seniors.
+- **Research course information before enrolling** - Students actively try to find out what a course actually involves (workload, assessment style, content, lecturer quality) but currently rely heavily on combination of UQ website, Reddit, friends, and seniors.
 
 - **Plan their degree pathway** - Students need to figure out course sequences, prerequisites, and how everything fits together across semesters toward graduation.
 
@@ -30,5 +30,23 @@ consistently tell which courses contribute to this so far.
 #### Emotional Jobs
 
 - **Feel confident about their academic choices** - Students want reassurance they are on the right track.
+
+### Customer Pains
+
+#### Functional Pains
+
+- **Inconsistent and vague course descriptions** - Some ECPs provide decent information while others are extremely vague. Students may lose trust and confident in the ECP due to the inconsistency.
+
+- **Critical information hidden until after enrolment** - Timetables, actual weekly workload, and sometimes even syllabi are not available before the course actually start. This forced decisions based on incomplete information.
+
+#### Emotional Pains
+
+- **"Easy course" regret** - Multiple students specifically regretted taking "chill" courses because they felt they wasted an elective slot without learning anything valuable.
+
+- **Feeling like the degree is "too broad" to lead anywhere** - Students who couldn't picture their career path described the feeling like they were going in blind.
+
+#### Social Pains
+
+- **Embarrassment when unable to explain what they have learnt** - Especially in interview but struggled to articulate skills is socially uncomfortable.
 
 ## Part 2:Value Map
