@@ -1,5 +1,15 @@
 # Value Proposition Canvas
 
+## Summary of Aggregate Test Card Metrics (Iteration 1)
+
+| Metric | Combined Result | Criterion | Met? |
+|--------|----------------|-----------|------|
+| Course choices primarily driven by convenience | ~56% (14/25) | 70% | **NO** |
+| Cannot clearly articulate skills from courses | Varied (20%–83% across members) | 60% | **PARTIALLY** |
+| Frustration or regret about past course choices | Varied (40%–67% across members) | 50% | **PARTIALLY** |
+
+**Overall verdict:** The original hypothesis was only partially supported. The core problem validated is not convenience-driven selection itself, but rather a lack of decision-friendly information, pathway visibility, and skill-level transparency before enrolling.
+
 ## Part 1: Customer Profile
 
 Our primary customer segment is **university students with elective flexibility who lack clarity on how courses connect to skills and careers**. This covers:
