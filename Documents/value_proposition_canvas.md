@@ -89,7 +89,16 @@ consistently tell which courses contribute to this so far.
 
 ### Pain Relievers
 
-- ****
+| Pain | Pain Reliever |
+|------|---------------|
+| Pre-enrolment information gaps | The transparent course dashboard surfaces workload, assessment structure, weekly topics, and lecturer quality — all the information students currently can't find — in one consistent place before enrolment. |
+| Poor course discovery UX | SkillPath groups courses by skill, career path, and interest rather than by course code. Students can browse by "where do I want to end up?" instead of guessing codes or scrolling endlessly. |
+| No course-to-skill-to-career visibility | The mapping engine explicitly connects each course to specific skills and those skills to career outcomes, eliminating the guesswork. |
+| Inconsistent course descriptions | By standardising the information layer on top of existing ECPs — adding peer data, skill breakdowns, and workload estimates — SkillPath creates consistency regardless of how good or bad the official description is. |
+| Reliance on informal, unreliable channels | The peer review and community layer formalises and aggregates the word-of-mouth information students already seek, making it accessible and searchable rather than scattered across Reddit threads. |
+| "Easy course" regret | By showing what skills a course does (and doesn't) develop, and how it fits into career pathways, SkillPath helps students make intentional trade-offs rather than defaulting to "easy" without understanding the cost. |
+| Can't articulate skills | The skill progress tracker accumulates skills across courses and helps students translate them into professional language, directly addressing the CV confidence gap. |
+| Unclear prerequisite flows | The degree progression visualiser shows exactly how courses build on each other, what order is recommended, and what alternative sequences exist. |
 
 ### Gain Creators
 
