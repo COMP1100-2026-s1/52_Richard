@@ -1,0 +1,41 @@
+
+## Business Model Canvas
+
+**Customer Segments**
+
+- Student have elective courses to take
+- Students who do not have a course plan
+- Students who are not familiar with the Australian course systems
+- Career-changers students
+- Dual-degree student
+- Final year students trying to articulate skills for job applications
+
+**Value Propositions**
+
+- Choosing courses intentionally to have more impact, reducing course regret
+- Understand skill set they have developed from their degree
+- The skills they are going to obtained/developed from that specific courses
+
+**Channels**
+
+- Social Media
+- Peer referral
+- Academic advisors
+- Career centres
+- Student societies and peer mentors
+- Orientation Week
+- Integration with UQ website
+
+**Customer Relationships**
+
+- Guided onboarding for first-year students
+- Self-service
+- Push notifications or reminders during enrolment period
+- Personalised course recommendations
+- Skill Progress Tracking (Ongoing personal dashboard)
+
+**Revenue Streams**
+
+- Ads
+- Free basic feature, paid upgrade for career feature
+- Sell it to universities as a tool
