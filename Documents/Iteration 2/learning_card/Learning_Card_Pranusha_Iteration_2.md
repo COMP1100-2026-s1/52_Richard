@@ -4,14 +4,8 @@
 
 University students would strongly value a tool that helps them choose courses based on their interests, desired skills, and future career outcomes. We believed that many students feel confused by current university course planning systems and struggle to understand how their course selections connect to specific jobs or long-term career pathways. We also believed that a more personalised and user-friendly platform showing skill development, prerequisite pathways, and career options would help students make more confident and strategic course decisions.
 
-<<<<<<< HEAD:Documents/Iteration 2/learning_card/Pranusha
-OBSERVATION We observed ....
+## OBSERVATION We observed that
 From interviewing three university students across QUT and UQ, we observed that all students responded positively to the SkillPath concept and said they would use a tool like this, especially during first year or when changing degrees. Students commonly described university planning systems as confusing, not intuitive, or difficult to navigate. Several students also expressed uncertainty about how their current courses aligned with future careers. Additionally, two out of three students struggled to clearly list the skills they had developed from their courses so far. Stsudents were especially interested in features such as career pathway mapping, clear prerequisite planning, and knowing what skills each course develops before enrolling.
-=======
-## OBSERVATION We observed
-
-From interviewing three university students across QUT and UQ, we observed that all students responded positively to the SkillPath concept and said they would use a tool like this, especially during first year or when changing degrees. Students commonly described university planning systems as confusing, not intuitive, or difficult to navigate. Several students also expressed uncertainty about how their current courses aligned with future careers. Additionally, two out of three students struggled to clearly list the skills they had developed from their courses so far. Students were especially interested in features such as career pathway mapping, clear prerequisite planning, and knowing what skills each course develops before enrolling.
->>>>>>> fbd038b31b26a76f9467c0332493fdb726d004f2:Documents/Iteration 2/learning_card/Learning_Card_Pranusha_Iteration_2.md
 
 ## LEARNING INSIGHTS From that we learnt that
 
