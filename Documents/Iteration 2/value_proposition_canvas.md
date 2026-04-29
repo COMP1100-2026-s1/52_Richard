@@ -1,7 +1,5 @@
 SkillPath Value Proposition Canvas
 
-Complete Version
-
 # Summary of Aggregate Test Card Metrics
 
 | Metric                                               | Result     | Criterion | Met? |
