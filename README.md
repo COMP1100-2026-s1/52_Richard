@@ -128,8 +128,10 @@
 │   │   └── 27_03_2026_Meeting.pdf
 │   ├── Meeting 4 - 1 April/
 │   │   └── 02_04_2026_Meeting.pdf
-│   └── Meeting 5 - 28 April/
-│       └── 28_04_2026_Meeting.pdf
+│   ├── Meeting 5 - 28 April/
+│   │   └── 28_04_2026_Meeting.pdf
+│   └── Meeting 6 - 29 April/
+│       └── 29_04_2026_Meeting.pdf
 ├── README.md
 └── team_values.md
 ```
