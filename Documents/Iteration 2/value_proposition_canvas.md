@@ -91,36 +91,34 @@ SkillPath Value Proposition Canvas
 
 ## Products and Services
 
-- Course-to-skill mapping engine
-- Career pathway visualiser
-- Semester planning dashboard
-- Future prerequisite alert system
-- Side-by-side course comparison tool
-- Personalised recommendations
-- Skill progress tracker
-- Resume skill summary generator
-- Peer insight / review layer
+- Skill & Career Course Card - A redesigned course profile that clearly shows 3-5 specific skills developed and 2-3 direct career outcomes, replacing vague academic descriptions.
+- Side-by-Side Course Comparison Tool - Allows students to compare two courses based on skills gained, career pathways, workload, and value.
+- Basic Visual Pathway ("Mini-Tree") - A simple flow map showing prerequisites required ---> selected course ---> future courses unlocked ---> potential careers.
+- Smart Search & Discovery Engine - Search courses by skill, career title, interest area, or semester availability rather than only by course code.
+- Dual-Mode Entry Navigation - Two clear pathways:
+- Explore Mode: Browse by skills or careers
+- Validate Mode: Check whether a chosen course aligns with goals
 
-## Pain Relievers
-
-| Pain                            | Pain Reliever                                                       |
-| ------------------------------- | ------------------------------------------------------------------- |
-| Confusing planners              | Clean, intuitive interface simpler than existing university systems |
-| Hidden prerequisites            | Visual pathway maps show what current decisions unlock later        |
-| Unclear career outcomes         | Career mapping shows how courses connect to industries and roles    |
-| Cannot identify skills          | Course pages list specific transferable and technical skills        |
-| Information overload            | Consolidates planners, reviews, and course data in one place        |
-| Course regret                   | Compare future value before enrolling                               |
-| Reliance on informal advice     | Structured peer insights replace scattered Reddit threads           |
-| Degree switching after poor fit | Early pathway clarity reduces costly misalignment                   |
-| Stress during enrolment         | Fast personalised suggestions reduce pressure                       |
+| **Pain**                                           | **Pain Reliever**                                                                                                 |
+| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Vague and confusing course descriptions            | The Skill & Career Course Card translates academic jargon into clear, practical skills and direct job outcomes.   |
+| Students do not know what skills a course develops | Specific technical and transferable skills are listed on every course page.                                       |
+| Confusion between similar electives                | The Side-by-Side Comparison Tool highlights differences in skills, outcomes, and workload.                        |
+| Hidden prerequisites and poor long-term planning   | The Mini-Tree pathway visually shows what is required before and what opportunities unlock after the course.      |
+| Students search only by course code                | Smart Search lets students begin with a skill ("Python") or career ("Data Analyst") instead.                      |
+| Students feel lost and do not know where to begin  | Dual-Mode Navigation gives a starting point whether users want to explore options or validate an existing choice. |
+| Reliance on Reddit, friends, and guesswork         | Centralised structured information reduces dependence on scattered informal advice.                               |
+| Stress during enrolment periods                    | Fast search, comparisons, and visual guidance make decisions quicker and more confident.                          |
+| Regret after taking low-value electives            | Students can evaluate future value before enrolling.                                                              |
 
 ## Gain Creators
 
-- Intentional course decisions based on future goals
-- Stronger confidence in academic direction
-- Better employability through visible skills
-- Long-term planning clarity
-- Less wasted time and money from wrong course choices
-- Easier articulation of strengths in job applications
-- Ongoing dashboard showing progress toward career goals
+- Intentional course decisions based on future skills and career goals rather than convenience.
+- Greater confidence that current study choices are leading somewhere valuable.
+- Faster and easier decision-making during enrolment windows.
+- Improved employability awareness by linking courses directly to real job titles.
+- Better long-term planning clarity through prerequisite and progression visibility.
+- Reduced wasted electives, time, and money by making smarter course choices earlier.
+- Personalised user journeys through Explore Mode and Validate Mode.
+- Clearer articulation of strengths for resumes, LinkedIn, and interviews.
+- A more engaging planning experience through visual pathways rather than static planner tables
