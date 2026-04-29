@@ -15,53 +15,121 @@
 ```
 52_Richard/
 ├── Documents/
-│   ├── learning_card/
-│   │   ├── Eddie/
-│   │   ├── William/
-│   │   └── learning_cards.md
-│   ├── test_card/
-│   │   └── test_cards.md
-│   └── business_model_canvas.md
+│   ├── Iteration 1/
+│   │   ├── business_model_canvas.md
+│   │   ├── value_proposition_canvas.md
+│   │   ├── learning_card/
+│   │   │   ├── Combined Learning Card - SkillPath.md
+│   │   │   ├── Brian/
+│   │   │   │   ├── Interview Analysis - Brian.md
+│   │   │   │   └── Learning Card - Muhammad Brian Subekti (Iteration 1).md
+│   │   │   ├── Eddie/
+│   │   │   │   ├── Interview Analysis - Eddie.md
+│   │   │   │   └── Learning Card - Eddie Zheng En Yung (Iteration 1).md
+│   │   │   ├── Jordan/
+│   │   │   │   ├── Interview Analysis - Jordan.md
+│   │   │   │   └── Learning Card - Muhammad Jordan Arrazi.md
+│   │   │   ├── Pranusha/
+│   │   │   │   ├── Interview Analsis - Pranusha.md
+│   │   │   │   └── Learning Card - Pranusha.md
+│   │   │   └── William/
+│   │   │       └── Learning Card - William (Iteration 1).md
+│   │   └── test_card/
+│   │       └── test_cards.md
+│   └── Iteration 2/
+│       ├── business_model_canvas.md
+│       ├── competitor_analysis.md
+│       ├── hypotheses_experiments.md
+│       ├── value_proposition_canvas.md
+│       ├── learning_card/
+│       │   ├── Learning_Card_Eddie_Zheng_En_Yung_Iteration_2.md
+│       │   ├── Learning_Card_Muhammad_Brian_Subekti_Iteration_2.md
+│       │   ├── Learning_Card_Pranusha_Iteration_2.md
+│       │   ├── Learning_card_William_iteration_2.md
+│       │   └── Jordan/
+│       │       ├── Interview Analysis - Jordan.md
+│       │       └── Learning Card - Jordan (Iteration 2).md
+│       └── test_card/
+│           ├── test_card.md
+│           └── features_test_card/
+│               ├── test_card_feature1.md
+│               ├── test_card_feature2.md
+│               ├── test_card_feature3.md
+│               ├── test_card_feature4.md
+│               └── test_card_feature5.md
 ├── Interviews/
-│   └── Iteration_1/
+│   ├── Iteration_1/
+│   │   ├── Brian/
+│   │   │   ├── Interview_1_2026_03_25_1.md
+│   │   │   ├── Interview_2_2026_03_25_2.md
+│   │   │   ├── Interview_3_2026_03_26_3.md
+│   │   │   ├── Interview_4_2026_03_26_4.md
+│   │   │   ├── Interview_5_2026_03_19_5.md
+│   │   │   └── Interview_6_2026_03_19_6.md
+│   │   ├── Eddie/
+│   │   │   ├── Interview_1_2026_03_23_1.md
+│   │   │   ├── Interview_2_2026_03_24_2.md
+│   │   │   ├── Interview_3_2026_03_24_3.md
+│   │   │   ├── Interview_4_2026_03_24_4.md
+│   │   │   ├── Interview_5_2026_03_24_5.md
+│   │   │   └── Interview_6_2026_03_25_6.md
+│   │   ├── Jordan-Interview/
+│   │   │   ├── Interview_1_2026_03_22_1.md
+│   │   │   ├── Interview_2_2026_03_22_2.md
+│   │   │   ├── Interview_3_2026_03_22_3.md
+│   │   │   ├── Interview_4_2026_03_22_4.md
+│   │   │   └── Interview_5_2026_03_22_5.md
+│   │   ├── Pranusha/
+│   │   │   ├── Interview_1_2026_03_25_1.md
+│   │   │   ├── Interview_2_2026_03_25_2.md
+│   │   │   ├── Interview_3_2026_03_25_3.md
+│   │   │   ├── Interview_4_2026_03_25_4.md
+│   │   │   └── Interview_5_2026_03_25_5.md
+│   │   └── William/
+│   │       ├── Interviewee1_2026_03_19_1.md
+│   │       ├── Interviewee2_2026_03_22_2.md
+│   │       ├── Interviewee3_2026_03_22_3.md
+│   │       ├── Interviewee4_2026_03_22_3.md
+│   │       └── Interviewee5_2026_03_25_3.md
+│   └── Iteration_2/
 │       ├── Brian/
-│       │   ├── Interview_1_2026_03_25_1.md
-│       │   ├── Interview_2_2026_03_25_2.md
-│       │   ├── Interview_3_2026_03_26_3.md
-│       │   ├── Interview_4_2026_03_26_4.md
-│       │   ├── Interview_5_2026_03_19_5.md
-│       │   └── Interview_6_2026_03_19_6.md
+│       │   ├── Interview_1_2026_4_23_1.md
+│       │   ├── Interview_2_2026_4_26_2.md
+│       │   ├── Interview_3_2026_4_26_3.md
+│       │   ├── Interview_4_2026_4_27_4.md
+│       │   └── Interview_5_2026_4_27_5.md
 │       ├── Eddie/
-│       │   ├── Interview_1_2026_03_23_1.md
-│       │   ├── Interview_2_2026_03_24_2.md
-│       │   ├── Interview_3_2026_03_24_3.md
-│       │   ├── Interview_4_2026_03_24_4.md
-│       │   ├── Interview_5_2026_03_24_5.md
-│       │   └── Interview_6_2026_03_25_6.md
-│       ├── Jordan-Interview/
-│       │   ├── Interview_1_2026_03_22_1.md
-│       │   ├── Interview_2_2026_03_22_2.md
-│       │   ├── Interview_3_2026_03_22_3.md
-│       │   ├── Interview_4_2026_03_22_4.md
-│       │   └── Interview_5_2026_03_22_5.md
+│       │   ├── Interview_1_2026_04_26_1.md
+│       │   ├── Interview_2_2026_04_27_2.md
+│       │   └── Interview_3_2026_04_28_3.md
+│       ├── Jordan/
+│       │   ├── Interview_1_2026_04_26_1.md
+│       │   ├── Interview_2_2026_04_27_2.md
+│       │   ├── Interview_3_2026_04_27_3.md
+│       │   ├── Interview_4_2026_04_27_4.md
+│       │   └── Interview_5_2026_04_27_5.md
 │       ├── Pranusha/
-│       │   ├── Interview_1_2026_03_25_1.md
-│       │   ├── Interview_2_2026_03_25_2.md
-│       │   ├── Interview_3_2026_03_25_3.md
-│       │   ├── Interview_4_2026_03_25_4.md
-│       │   └── Interview_5_2026_03_25_5.md
+│       │   ├── Interview_1_2026_04_27_1.md
+│       │   ├── Interview_2_2026_04_27_2.md
+│       │   └── Interview_3_2026_04_27_3.md
 │       └── William/
-│           ├── Interviewee1_2026_03_19_1.md
-│           ├── Interviewee2_2026_03_22_2.md
-│           ├── Interviewee3_2026_03_22_3.md
-│           ├── Interviewee4_2026_03_22_3.md
-│           └── Interviewee5_2026_03_25_3.md
+│           ├── Interview_1_2026_04_27_1.md
+│           ├── Interview_2_2026_04_27_2.md
+│           ├── Interview_3_2026_04_27_3.md
+│           ├── Interview_4_2026_04_27_4.md
+│           └── Interview_5_2026_04_27_5.md
 ├── Meetings/
 │   ├── Meeting 1 - 14 March/
 │   │   ├── 14032026_Meeting.pdf
 │   │   └── video1446102659.mp4
-│   └── Meeting 2 - 19 March/
-│       └── 19032026_Meeting.pdf
+│   ├── Meeting 2 - 19 March/
+│   │   └── 19032026_Meeting.pdf
+│   ├── Meeting 3 - 27 March/
+│   │   └── 27_03_2026_Meeting.pdf
+│   ├── Meeting 4 - 1 April/
+│   │   └── 02_04_2026_Meeting.pdf
+│   └── Meeting 5 - 28 April/
+│       └── 28_04_2026_Meeting.pdf
 ├── README.md
 └── team_values.md
 ```
