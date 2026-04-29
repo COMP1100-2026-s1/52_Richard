@@ -8,7 +8,7 @@ SkillPath Value Proposition Canvas
 | Help them make more intentional course selections.                         | 100%   | 60%       | YES  |
 | Help them clearly understand the skills they are gaining from each course. | 100%   | 50%       | YES  |
 
-# Overall Verdict: The original hypothesis was only partially supported. The core problem validated is not convenience-driven selection itself, but rather a lack of decision-friendly information, pathway visibility, and skill-level transparency before enrolling
+## Overall Verdict ##: The original hypothesis was only partially supported. The core problem validated is not convenience-driven selection itself, but rather a lack of decision-friendly information, pathway visibility, and skill-level transparency before enrolling
 
 # Part 1: Customer Profile
 
