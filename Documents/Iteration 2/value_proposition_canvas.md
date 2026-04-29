@@ -9,6 +9,8 @@ SkillPath Value Proposition Canvas
 | Frustration/confusion with university planners       | 100% (3/3) | 50%       | YES  |
 | Convenience was main reason for choosing courses     | 0% (3/3)   | 70%       | NO   |
 
+**Overall verdict:** The original hypothesis was only partially supported. The core problem validated is not convenience-driven selection itself, but rather a lack of decision-friendly information, pathway visibility, and skill-level transparency before enrolling.
+
 # Part 1: Customer Profile
 
 ## Primary Customer Segment
