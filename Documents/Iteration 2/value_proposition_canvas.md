@@ -2,14 +2,13 @@ SkillPath Value Proposition Canvas
 
 # Summary of Aggregate Test Card Metrics
 
-| Metric                                               | Result     | Criterion | Met? |
-| ---------------------------------------------------- | ---------- | --------- | ---- |
-| Would use SkillPath solution                         | 100% (3/3) | 70%       | YES  |
-| Cannot clearly articulate skills gained from courses | 67% (2/3)  | 50%       | YES  |
-| Frustration/confusion with university planners       | 100% (3/3) | 50%       | YES  |
-| Convenience was main reason for choosing courses     | 0% (3/3)   | 70%       | NO   |
+| Metric                                                                     | Result | Criterion | Met? |
+| -------------------------------------------------------------------------- | ------ | --------- | ---- |
+| Would use SkillPath solution                                               | 100%   | 70%       | YES  |
+| Help them make more intentional course selections.                         | 100%   | 60%       | YES  |
+| Help them clearly understand the skills they are gaining from each course. | 100%   | 50%       | YES  |
 
-**Overall verdict:** The original hypothesis was only partially supported. The core problem validated is not convenience-driven selection itself, but rather a lack of decision-friendly information, pathway visibility, and skill-level transparency before enrolling.
+# Overall Verdict: The original hypothesis was only partially supported. The core problem validated is not convenience-driven selection itself, but rather a lack of decision-friendly information, pathway visibility, and skill-level transparency before enrolling
 
 # Part 1: Customer Profile
 
