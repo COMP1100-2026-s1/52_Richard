@@ -1,0 +1,22 @@
+# Learning Card
+
+## HYPOTHESIS We believed that
+
+University students would strongly value a tool that helps them choose courses based on their interests, desired skills, and future career outcomes. We believed that many students feel confused by current university course planning systems and struggle to understand how their course selections connect to specific jobs or long-term career pathways. We also believed that a more personalised and user-friendly platform showing skill development, prerequisite pathways, and career options would help students make more confident and strategic course decisions.
+
+<<<<<<< HEAD:Documents/Iteration 2/learning_card/Pranusha
+OBSERVATION We observed ....
+From interviewing three university students across QUT and UQ, we observed that all students responded positively to the SkillPath concept and said they would use a tool like this, especially during first year or when changing degrees. Students commonly described university planning systems as confusing, not intuitive, or difficult to navigate. Several students also expressed uncertainty about how their current courses aligned with future careers. Additionally, two out of three students struggled to clearly list the skills they had developed from their courses so far. Stsudents were especially interested in features such as career pathway mapping, clear prerequisite planning, and knowing what skills each course develops before enrolling.
+=======
+## OBSERVATION We observed
+
+From interviewing three university students across QUT and UQ, we observed that all students responded positively to the SkillPath concept and said they would use a tool like this, especially during first year or when changing degrees. Students commonly described university planning systems as confusing, not intuitive, or difficult to navigate. Several students also expressed uncertainty about how their current courses aligned with future careers. Additionally, two out of three students struggled to clearly list the skills they had developed from their courses so far. Students were especially interested in features such as career pathway mapping, clear prerequisite planning, and knowing what skills each course develops before enrolling.
+>>>>>>> fbd038b31b26a76f9467c0332493fdb726d004f2:Documents/Iteration 2/learning_card/Learning_Card_Pranusha_Iteration_2.md
+
+## LEARNING INSIGHTS From that we learnt that
+
+From these interviews we learnt that the problem is deeper than simply helping students pick courses. Students are actively looking for guidance, confidence, and clarity throughout their degree journey. Our original concept was validated, but students showed that the most valuable part of the solution is not only recommendations but helping them understand where their degree leads and what steps they need to take next. We also learnt that students are already turning to alternative tools such as ChatGPT or self-research because current university systems are not meeting their needs. This confirms a real market gap for a clearer and more personalised planning platform.
+
+## THEREFORE, WE WILL Therefore we will
+
+Therefore, we will refine SkillPath into a smart degree navigation and career planning tool rather than only a course recommendation app. The next version will focus on visual course roadmaps, prerequisite alerts, skill outcomes for each subject, and career pathway matching. We will also prioritise a simple and intuitive user interface that is easier to use than existing university planners. In future interviews, we will test which features students value most and whether they would regularly return to use the platform each semester.
