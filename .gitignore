@@ -1,1 +1,10 @@
 .DS_Store
+
+# Environment variables - never commit this
+.env
+
+# Django
+db.sqlite3
+__pycache__/
+*.pyc
+.venv/
