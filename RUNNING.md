@@ -43,7 +43,17 @@ Once activated, your terminal prompt will show `(.venv)`.
 
 ---
 
-## 3. Apply Migrations
+## 3. Install Dependencies
+
+Install all required packages from `requirements.txt`:
+
+```powershell
+pip install -r requirements.txt
+```
+
+---
+
+## 4. Apply Migrations
 
 Run this whenever you pull new changes or add new models:
 
@@ -53,7 +63,7 @@ python manage.py migrate
 
 ---
 
-## 4. Start the Development Server
+## 5. Start the Development Server
 
 ```powershell
 python manage.py runserver
@@ -65,13 +75,13 @@ The Django admin panel is at: http://127.0.0.1:8000/admin
 
 ---
 
-## 5. Stop the Server
+## 6. Stop the Server
 
 Press `Ctrl + C` in the terminal.
 
 ---
 
-## 6. Deactivate the Virtual Environment
+## 7. Deactivate the Virtual Environment
 
 When you are done:
 
@@ -86,6 +96,7 @@ deactivate
 | Task                     | Command (Windows)                    | Command (macOS/Linux)              |
 |--------------------------|--------------------------------------|------------------------------------|
 | Activate environment     | `.venv\Scripts\Activate.ps1`         | `source .venv/bin/activate`        |
+| Install dependencies     | `pip install -r requirements.txt`    | `pip install -r requirements.txt`  |
 | Apply migrations         | `python manage.py migrate`           | `python manage.py migrate`         |
 | Create new migrations    | `python manage.py makemigrations`    | `python manage.py makemigrations`  |
 | Start server             | `python manage.py runserver`         | `python manage.py runserver`       |
