@@ -1,0 +1,224 @@
+[
+  {"model": "SkillPath.skill", "pk": 1,  "fields": {"name": "Programming Fundamentals",          "description": "Core programming concepts including variables, control flow, functions, and basic data structures."}},
+  {"model": "SkillPath.skill", "pk": 2,  "fields": {"name": "Object-Oriented Programming",       "description": "Software design using classes, inheritance, polymorphism, and encapsulation in languages like Java."}},
+  {"model": "SkillPath.skill", "pk": 3,  "fields": {"name": "Data Modelling",                    "description": "Techniques for structuring and representing real-world information using relational and object models."}},
+  {"model": "SkillPath.skill", "pk": 4,  "fields": {"name": "Software Testing",                  "description": "Verifying software correctness through unit tests, integration tests, and disciplined testing practices."}},
+  {"model": "SkillPath.skill", "pk": 5,  "fields": {"name": "Systems Programming in C",          "description": "Low-level programming in C for operating systems, process management, and system-level applications."}},
+  {"model": "SkillPath.skill", "pk": 6,  "fields": {"name": "Operating Systems Fundamentals",    "description": "Processes, threads, virtual memory, file systems, and core OS design principles."}},
+  {"model": "SkillPath.skill", "pk": 7,  "fields": {"name": "Networking and Internet Protocols", "description": "TCP/IP networking, socket programming, inter-process communication, and the Internet protocol stack."}},
+  {"model": "SkillPath.skill", "pk": 8,  "fields": {"name": "Algorithms and Data Structures",   "description": "Design, analysis, and implementation of algorithms and abstract data types with Big-O complexity analysis."}},
+  {"model": "SkillPath.skill", "pk": 9,  "fields": {"name": "Digital Logic and Computer Architecture", "description": "Digital systems, machine-level data representation, memory organisation, and computer architecture principles."}},
+  {"model": "SkillPath.skill", "pk": 10, "fields": {"name": "Embedded Systems Development",     "description": "Programming and interfacing microcontrollers and embedded hardware for real-time and physical applications."}},
+  {"model": "SkillPath.skill", "pk": 11, "fields": {"name": "Database Design and SQL",           "description": "Relational database design, entity-relationship modelling, normalisation, and SQL querying."}},
+  {"model": "SkillPath.skill", "pk": 12, "fields": {"name": "Web and Mobile Development",        "description": "Building interactive web and native mobile applications using JavaScript frameworks and cross-platform tools."}},
+  {"model": "SkillPath.skill", "pk": 13, "fields": {"name": "User-Centred Design",               "description": "Design principles focused on human needs, usability evaluation, and interaction analysis techniques."}},
+  {"model": "SkillPath.skill", "pk": 14, "fields": {"name": "Team Collaboration",                "description": "Effective communication, peer collaboration, and project management within engineering and software teams."}},
+  {"model": "SkillPath.skill", "pk": 15, "fields": {"name": "Innovation and Prototyping",        "description": "Applying innovation frameworks to rapidly prototype and iterate on technology solutions."}},
+  {"model": "SkillPath.skill", "pk": 16, "fields": {"name": "Discrete Mathematics",              "description": "Logic, set theory, graph theory, proof techniques, and combinatorics for computer science applications."}},
+  {"model": "SkillPath.skill", "pk": 17, "fields": {"name": "Linear Algebra and Calculus",       "description": "Vectors, matrices, eigenvalues, differentiation, integration, and Taylor series with engineering applications."}},
+  {"model": "SkillPath.skill", "pk": 18, "fields": {"name": "Engineering Design",                "description": "Statics, materials science, estimation, and hands-on design-build-test methodology for engineering projects."}},
+
+  {
+    "model": "SkillPath.course", "pk": 1,
+    "fields": {
+      "code": "CSSE1001", "name": "Introduction to Software Engineering",
+      "description": "Introduces programming fundamentals, data modelling, and program design using Python. Covers procedural and object-oriented approaches through exploratory problem-solving.",
+      "difficulty": "easy", "workload": "~5 hrs/week contact", "assessment_type": "Assignments, Examination",
+      "peer": 0.0, "skills": [1, 3], "prerequisites": []
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 2,
+    "fields": {
+      "code": "CSSE2002", "name": "Programming in the Large",
+      "description": "Covers object-oriented programming, generic programming, exception handling, file I/O, GUI development in Java, and software testing discipline.",
+      "difficulty": "medium", "workload": "~5 hrs/week contact", "assessment_type": "Assignments, Examinations, Tutorials, Practical Problems",
+      "peer": 0.0, "skills": [2, 4], "prerequisites": [1]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 3,
+    "fields": {
+      "code": "CSSE2310", "name": "Computer Systems Principles and Programming",
+      "description": "Covers systems programming in C, Linux/UNIX environments, operating system fundamentals, networking, and multi-process application development.",
+      "difficulty": "hard", "workload": "~5 hrs/week contact", "assessment_type": "Assignments, Examination",
+      "peer": 0.0, "skills": [5, 6, 7], "prerequisites": [1]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 4,
+    "fields": {
+      "code": "COMP1100", "name": "Introduction to Software Innovation",
+      "description": "Covers innovation processes, team collaboration, technology project decision-making, and prototyping methodology for software product development.",
+      "difficulty": "easy", "workload": "~5 hrs/week contact", "assessment_type": "Group Assignment, Workshop Submissions, Presentation",
+      "peer": 0.0, "skills": [14, 15], "prerequisites": [1]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 5,
+    "fields": {
+      "code": "INFS1200", "name": "Introduction to Information Systems",
+      "description": "Covers information systems analysis and design, relational database technology, data modelling, SQL querying, and small-scale database development.",
+      "difficulty": "easy", "workload": "~4 hrs/week contact", "assessment_type": "Assignments, Weekly Tasks, Oral Assessment, Examination",
+      "peer": 0.0, "skills": [3, 11], "prerequisites": []
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 6,
+    "fields": {
+      "code": "COMP3506", "name": "Algorithms and Data Structures",
+      "description": "Covers algorithm design and analysis, abstract data types, computational complexity, mathematical reasoning, and applied object-oriented programming.",
+      "difficulty": "hard", "workload": "~4 hrs/week contact", "assessment_type": "Assignments, Online Problems, Examination",
+      "peer": 0.0, "skills": [8], "prerequisites": [2, 15]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 7,
+    "fields": {
+      "code": "CSSE2010", "name": "Introduction to Computer Systems",
+      "description": "Covers digital logic, machine-level data representation, computer organisation, memory systems, microcontroller architecture, and embedded systems development.",
+      "difficulty": "medium", "workload": "~6 hrs/week contact", "assessment_type": "Assignments, Laboratory Work, Quizzes, Examination",
+      "peer": 0.0, "skills": [9, 10], "prerequisites": [1]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 8,
+    "fields": {
+      "code": "COMP2048", "name": "Theory of Computing",
+      "description": "Covers formal models of computation including DFA, NFA, and Turing machines, automata theory, decidability, complexity theory, and an introduction to quantum computing.",
+      "difficulty": "hard", "workload": "~6 hrs/week contact", "assessment_type": "Demonstrations, Examination",
+      "peer": 0.0, "skills": [16], "prerequisites": [1, 15]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 9,
+    "fields": {
+      "code": "DECO2500", "name": "Human-Computer Interaction",
+      "description": "Covers models of human perception and cognition, interaction analysis, usability evaluation, user-centred design, and groupware and multimedia application design.",
+      "difficulty": "medium", "workload": "~4 hrs/week contact", "assessment_type": "Group and Individual Assessment, Examination",
+      "peer": 0.0, "skills": [13], "prerequisites": [1]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 10,
+    "fields": {
+      "code": "DECO3801", "name": "Design Computing Studio 3 — Build",
+      "description": "Interdisciplinary team project involving software prototype development, project management, technical communication, UX analysis, and professional engineering ethics.",
+      "difficulty": "medium", "workload": "~4 hrs/week contact", "assessment_type": "Projects, Presentations, Reports",
+      "peer": 0.0, "skills": [14, 15], "prerequisites": [2]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 11,
+    "fields": {
+      "code": "COMP2140", "name": "Web/Mobile Programming",
+      "description": "Covers functional programming with JavaScript, interactive web and native app development, JavaScript frameworks, and cross-platform architecture design and evaluation.",
+      "difficulty": "medium", "workload": "~3 hrs/week contact", "assessment_type": "Assignments, Projects, Online Problems",
+      "peer": 0.0, "skills": [12], "prerequisites": [1]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 12,
+    "fields": {
+      "code": "MATH1040", "name": "Mathematical Foundations I",
+      "description": "Covers counting and probability, random variables, function analysis including quadratic, exponential, and trigonometric functions, differentiation, and integration.",
+      "difficulty": "easy", "workload": "~5 hrs/week contact", "assessment_type": "Workshop Exercises, Assignments, Examination",
+      "peer": 0.0, "skills": [17], "prerequisites": []
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 13,
+    "fields": {
+      "code": "MATH1050", "name": "Mathematical Foundations II",
+      "description": "Covers vectors, matrices, complex numbers, mathematical induction, and extensions of differentiation and integration building on Mathematical Methods.",
+      "difficulty": "medium", "workload": "~5 hrs/week contact", "assessment_type": "Tutorial Quizzes, Assignments, Examination",
+      "peer": 0.0, "skills": [17], "prerequisites": [12]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 14,
+    "fields": {
+      "code": "MATH1051", "name": "Calculus and Linear Algebra I",
+      "description": "Covers vectors, matrices, eigenvalues, sequences and series, Taylor series, integration techniques, and scalar and vector products with engineering applications.",
+      "difficulty": "medium", "workload": "~5 hrs/week contact", "assessment_type": "Assignments, Quizzes, Examination",
+      "peer": 0.0, "skills": [17], "prerequisites": [13]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 15,
+    "fields": {
+      "code": "MATH1061", "name": "Discrete Mathematics",
+      "description": "Covers propositional and predicate logic, set theory, graph theory, proof methods, mathematical induction, combinatorics, probability, and number theory.",
+      "difficulty": "medium", "workload": "~5 hrs/week contact", "assessment_type": "Assignments, Examination",
+      "peer": 0.0, "skills": [16], "prerequisites": []
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 16,
+    "fields": {
+      "code": "ENGG1001", "name": "Programming for Engineers",
+      "description": "Introduces programming fundamentals, data modelling, program design, and real-world data analysis applications, tailored for engineering students.",
+      "difficulty": "easy", "workload": "~4 hrs/week contact", "assessment_type": "Assignments, Online Problem Solving, Examination",
+      "peer": 0.0, "skills": [1, 3], "prerequisites": []
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 17,
+    "fields": {
+      "code": "ENGG1100", "name": "Professional Engineering",
+      "description": "Covers sustainability, estimation, materials selection, project management, engineering ethics, prototyping, and written and oral technical communication.",
+      "difficulty": "easy", "workload": "~5-7 hrs/week contact", "assessment_type": "Portfolio, Reports, Peer Assessment, Demonstration, Presentation",
+      "peer": 0.0, "skills": [14, 18], "prerequisites": []
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 18,
+    "fields": {
+      "code": "ENGG1700", "name": "Statics and Materials",
+      "description": "Covers statics fundamentals, materials science and properties, engineering design principles, and hands-on design, build, and test methodology.",
+      "difficulty": "medium", "workload": "~5 hrs/week contact", "assessment_type": "Design Challenge, Examinations",
+      "peer": 0.0, "skills": [18], "prerequisites": [12]
+    }
+  },
+
+  {
+    "model": "SkillPath.career", "pk": 1,
+    "fields": {
+      "name": "Software Engineer",
+      "description": "Designs, builds, and maintains software systems using structured programming and engineering principles.",
+      "skills": [1, 2, 4, 8], "courses": [1, 2, 6, 10]
+    }
+  },
+  {
+    "model": "SkillPath.career", "pk": 2,
+    "fields": {
+      "name": "Systems and Embedded Engineer",
+      "description": "Develops low-level software and hardware interfaces for operating systems, microcontrollers, and embedded devices.",
+      "skills": [5, 6, 9, 10], "courses": [3, 7, 17, 18]
+    }
+  },
+  {
+    "model": "SkillPath.career", "pk": 3,
+    "fields": {
+      "name": "Data Analyst",
+      "description": "Collects, models, and analyses data to extract insights using databases, algorithms, and mathematical methods.",
+      "skills": [3, 8, 11, 16], "courses": [1, 5, 6, 15]
+    }
+  },
+  {
+    "model": "SkillPath.career", "pk": 4,
+    "fields": {
+      "name": "UX and Product Designer",
+      "description": "Creates user-centred software products by applying interaction design, usability research, and prototyping techniques.",
+      "skills": [13, 14, 15], "courses": [4, 9, 10]
+    }
+  },
+  {
+    "model": "SkillPath.career", "pk": 5,
+    "fields": {
+      "name": "Full-Stack Web Developer",
+      "description": "Builds end-to-end web applications handling both front-end interfaces and back-end databases and APIs.",
+      "skills": [1, 2, 11, 12], "courses": [1, 2, 5, 11]
+    }
+  }
+]
