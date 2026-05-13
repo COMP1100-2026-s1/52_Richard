@@ -1,0 +1,192 @@
+{% extends "SkillPath/base.html" %}
+{% block nav_home %}active{% endblock %}
+
+{% block content %}
+<style>
+  .home-inner {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 48px 0 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .home-logo-mark {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-logo-mark svg {
+    width: 20px; height: 20px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .home-logo-text {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--fg);
+  }
+
+  .home-logo-text span { color: var(--accent); }
+
+  .home-heading {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--fg);
+    margin-bottom: 16px;
+  }
+
+  .home-subtitle {
+    font-size: 15px;
+    color: var(--fg-disabled);
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+  .home-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+    text-align: left;
+  }
+
+  .home-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: box-shadow var(--transition);
+  }
+
+  .home-card:hover { box-shadow: var(--shadow-float); }
+
+  .home-card-icon {
+    width: 44px; height: 44px;
+    background: var(--accent-subtle);
+    border-radius: 10px;
+    margin-bottom: 6px;
+  }
+
+  .home-card-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--fg);
+  }
+
+  .home-card-subtitle {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--fg);
+  }
+
+  .home-card-desc {
+    font-size: 14px;
+    color: var(--fg-disabled);
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .home-card-link {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .home-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    width: 100%;
+  }
+
+  .home-stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .home-stat-label {
+    font-size: 13px;
+    color: var(--fg-disabled);
+  }
+</style>
+
+<div class="home-inner">
+
+  <div class="home-logo">
+    <div class="home-logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+      </svg>
+    </div>
+    <span class="home-logo-text">Skill<span>Path</span></span>
+  </div>
+
+  <h1 class="home-heading">Choose your next course with confidence.</h1>
+  <p class="home-subtitle">See exactly what skills each course builds — and how they connect to the career you want.</p>
+
+  <div class="home-cards">
+
+    <a href="/courses/" class="home-card">
+      <div class="home-card-icon"></div>
+      <div class="home-card-title">Explore</div>
+      <div class="home-card-subtitle">Browse courses by skill or career goal</div>
+      <div class="home-card-desc">I want to find courses that build skills for a specific role.</div>
+      <div class="home-card-link">Start exploring</div>
+    </a>
+
+    <a href="/careers/" class="home-card">
+      <div class="home-card-icon"></div>
+      <div class="home-card-title">Validate</div>
+      <div class="home-card-subtitle">Check if a course is right for you</div>
+      <div class="home-card-desc">I have a course in mind — I want to know if it fits my goals.</div>
+      <div class="home-card-link">Validate a course</div>
+    </a>
+
+  </div>
+
+  <div class="home-stats">
+    <div class="home-stat">
+      <div class="home-stat-number">{{ course_count }}</div>
+      <div class="home-stat-label">courses mapped</div>
+    </div>
+    <div class="home-stat">
+      <div class="home-stat-number">{{ skill_count }}+</div>
+      <div class="home-stat-label">specific skills tracked</div>
+    </div>
+    <div class="home-stat">
+      <div class="home-stat-number">{{ career_count }}+</div>
+      <div class="home-stat-label">career outcomes</div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

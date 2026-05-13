@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillPath</title>
+  <link rel="stylesheet" href="{% static 'SkillPath/style.css' %}">
+</head>
+<body>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-mark">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+      </div>
+      <span class="sidebar-logo-text">Skill<span>Path</span></span>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Discover</div>
+      <a href="/" class="nav-item {% block nav_home %}{% endblock %}">Home</a>
+      <a href="/courses/" class="nav-item {% block nav_courses %}{% endblock %}">Course browser</a>
+      <a href="/validate/" class="nav-item {% block nav_validate %}{% endblock %}">Validate a course</a>
+      <a href="/compare/" class="nav-item {% block nav_compare %}{% endblock %}">Compare courses</a>
+      <a href="/careers/" class="nav-item {% block nav_careers %}{% endblock %}">Career pathways</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">My Progress</div>
+      <a href="#" class="nav-item">Skill tracker</a>
+      <a href="/plan/" class="nav-item {% block nav_plan %}{% endblock %}">
+        Saved courses
+        {% if request.session.saved_courses %}
+        <span class="nav-badge">{{ request.session.saved_courses|length }}</span>
+        {% endif %}
+      </a>
+    </div>
+
+    <div class="sidebar-spacer"></div>
+
+    <div class="sidebar-user">
+      <div class="sidebar-user-avatar">WM</div>
+      <div>
+        <div class="sidebar-user-name">William Mulya</div>
+        <div class="sidebar-user-degree">B Engineering (Hons)</div>
+      </div>
+    </div>
+
+  </aside>
+
+  <main class="main">
+    {% block content %}{% endblock %}
+  </main>
+
+</body>
+</html>

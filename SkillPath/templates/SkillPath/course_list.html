@@ -1,0 +1,161 @@
+{% extends "SkillPath/base.html" %}
+{% block nav_courses %}active{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Course browser</h1>
+  <p>Search by skill, career role, or course name to find the right elective.</p>
+</div>
+
+<div class="filter-bar">
+  <div class="filter-tabs">
+    <button class="filter-tab active" onclick="setTab('all', this)">All</button>
+    <button class="filter-tab" onclick="setTab('skill', this)">Skill</button>
+    <button class="filter-tab" onclick="setTab('career', this)">Career</button>
+  </div>
+  <input
+    class="filter-search"
+    type="text"
+    placeholder="Search course, skill, or career..."
+    oninput="updateCards()"
+    id="search-input"
+  >
+</div>
+
+<div class="popular-skills">
+  <span class="popular-skills-label">Popular skills</span>
+  {% for skill in skills|slice:":5" %}
+  <span class="skill-chip" onclick="filterBySkill('{{ skill.name|lower }}')">{{ skill.name }}</span>
+  {% endfor %}
+</div>
+
+<div class="difficulty-filters">
+  <button class="diff-btn active" onclick="filterByDifficulty('', event)">All</button>
+  <button class="diff-btn" onclick="filterByDifficulty('easy', event)">Low</button>
+  <button class="diff-btn" onclick="filterByDifficulty('medium', event)">Medium</button>
+  <button class="diff-btn" onclick="filterByDifficulty('hard', event)">High</button>
+</div>
+
+<div class="course-count" id="course-count">{{ courses|length }} courses</div>
+
+<div class="course-list" id="course-list">
+  {% for course in courses %}
+  <a
+    href="/courses/{{ course.pk }}/"
+    class="course-card"
+    data-name="{{ course.name|lower }}"
+    data-code="{{ course.code|lower }}"
+    data-difficulty="{{ course.difficulty }}"
+    data-skills="{% for skill in course.skills.all %}{{ skill.name|lower }},{% endfor %}"
+    data-careers="{% for career in course.career.all %}{{ career.name|lower }},{% endfor %}"
+  >
+    <div class="course-code">{{ course.code }} · {{ course.workload }}</div>
+    <div class="course-name">{{ course.name }}</div>
+
+    <div class="tags">
+      {% for skill in course.skills.all|slice:":3" %}
+      <span class="tag">{{ skill.name }}</span>
+      {% endfor %}
+      {% with total=course.skills.count %}
+      {% if total > 3 %}
+      <span class="tag-more">+{{ total|add:"-3" }} more</span>
+      {% endif %}
+      {% endwith %}
+    </div>
+
+    <div class="course-card-footer">
+      <div class="course-card-footer-left">
+        <span>{{ course.workload }}</span>
+        <div class="workload-bars">
+          {% if course.difficulty == 'easy' %}
+            <div class="workload-bar" style="height:8px;"></div>
+            <div class="workload-bar" style="height:12px; opacity:0.3;"></div>
+            <div class="workload-bar" style="height:16px; opacity:0.2;"></div>
+          {% elif course.difficulty == 'medium' %}
+            <div class="workload-bar" style="height:8px;"></div>
+            <div class="workload-bar" style="height:12px;"></div>
+            <div class="workload-bar" style="height:16px; opacity:0.3;"></div>
+          {% else %}
+            <div class="workload-bar" style="height:8px;"></div>
+            <div class="workload-bar" style="height:12px;"></div>
+            <div class="workload-bar" style="height:16px;"></div>
+          {% endif %}
+        </div>
+      </div>
+      <span class="tag tag-difficulty {{ course.difficulty }}">{{ course.get_difficulty_display }}</span>
+    </div>
+  </a>
+  {% empty %}
+  <div class="empty-state"><p>No courses found.</p></div>
+  {% endfor %}
+</div>
+
+{% if request.session.compare_list %}
+<div class="compare-bar">
+  <span>{{ request.session.compare_list|length }} course{% if request.session.compare_list|length > 1 %}s{% endif %} selected for comparison</span>
+  <a href="/compare/">View comparison →</a>
+</div>
+{% endif %}
+
+<script>
+let activeTab = 'all';
+let activeSkill = '';
+let activeDifficulty = '';
+
+function setTab(tab, btn) {
+  activeTab = tab;
+  document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const input = document.getElementById('search-input');
+  if (tab === 'skill')   input.placeholder = 'Search by skill name...';
+  if (tab === 'career')  input.placeholder = 'Search by career role...';
+  if (tab === 'all')     input.placeholder = 'Search course, skill, or career...';
+  updateCards();
+}
+
+function updateCards() {
+  const query = document.getElementById('search-input').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.course-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    let matchesSearch = true;
+    if (query) {
+      if (activeTab === 'skill') {
+        matchesSearch = card.dataset.skills.includes(query);
+      } else if (activeTab === 'career') {
+        matchesSearch = card.dataset.careers.includes(query);
+      } else {
+        matchesSearch = card.dataset.name.includes(query)
+          || card.dataset.code.includes(query)
+          || card.dataset.skills.includes(query)
+          || card.dataset.careers.includes(query);
+      }
+    }
+    const matchesDiff  = !activeDifficulty || card.dataset.difficulty === activeDifficulty;
+    const matchesSkill = !activeSkill || card.dataset.skills.includes(activeSkill);
+    const show = matchesSearch && matchesDiff && matchesSkill;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+
+  document.getElementById('course-count').textContent = visible + ' course' + (visible !== 1 ? 's' : '');
+}
+
+function filterBySkill(skill) {
+  activeSkill = activeSkill === skill ? '' : skill;
+  document.querySelectorAll('.skill-chip').forEach(c => {
+    c.style.borderColor = c.textContent.trim().toLowerCase() === activeSkill ? 'var(--accent)' : '';
+    c.style.color = c.textContent.trim().toLowerCase() === activeSkill ? 'var(--accent)' : '';
+  });
+  updateCards();
+}
+
+function filterByDifficulty(diff, event) {
+  activeDifficulty = diff;
+  document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  updateCards();
+}
+</script>
+{% endblock %}

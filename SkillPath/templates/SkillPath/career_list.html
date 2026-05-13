@@ -1,0 +1,57 @@
+{% extends "SkillPath/base.html" %}
+{% block nav_careers %}active{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Career Pathways</h1>
+  <p>Discover which courses and skills lead to your target career.</p>
+</div>
+
+<div class="career-grid">
+  {% for career in careers %}
+  <div class="career-card">
+
+    <div class="career-card-header">
+      <div class="career-icon">
+        <div class="career-icon-dot"></div>
+      </div>
+      <div class="career-name">{{ career.name }}</div>
+    </div>
+
+    <div class="career-description">{{ career.description }}</div>
+
+    <div>
+      <div class="career-section-label">Skills needed</div>
+      <div class="tags">
+        {% for skill in career.skills.all %}
+        <span class="tag">{{ skill.name }}</span>
+        {% empty %}
+        <span style="font-size:13px; color:var(--fg-disabled)">No skills listed.</span>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div>
+      <div class="career-section-label">Recommended courses</div>
+      <div class="career-course-list">
+        {% for course in career.courses.all %}
+        <a href="/courses/{{ course.pk }}/" class="career-course-item">
+          <div>
+            <div class="course-code">{{ course.code }}</div>
+            <div>{{ course.name }}</div>
+          </div>
+        </a>
+        {% empty %}
+        <span style="font-size:13px; color:var(--fg-disabled)">No courses linked.</span>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+  {% empty %}
+  <div class="empty-state">
+    <p>No career pathways found.</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
