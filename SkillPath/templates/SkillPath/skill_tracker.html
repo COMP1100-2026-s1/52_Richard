@@ -1,0 +1,152 @@
+{% extends "SkillPath/base.html" %}
+{% block nav_skill_tracker %}active{% endblock %}
+
+{% block content %}
+<style>
+  .tracker-stats {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  .tracker-stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .tracker-stat-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--border);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .tracker-stat-number {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--fg);
+    line-height: 1;
+  }
+
+  .tracker-stat-label {
+    font-size: 13px;
+    color: var(--fg-disabled);
+    margin-top: 3px;
+  }
+
+  .tracker-section {
+    margin-bottom: 36px;
+  }
+
+  .tracker-section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-disabled);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-row {
+    margin-bottom: 24px;
+  }
+
+  .skill-row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 3px;
+  }
+
+  .skill-row-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--fg);
+  }
+
+  .skill-row-level {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .skill-row-level.developing  { color: var(--fg-disabled); }
+  .skill-row-level.intermediate { color: var(--accent); }
+  .skill-row-level.advanced     { color: var(--accent); }
+
+  .skill-row-sub {
+    font-size: 13px;
+    color: var(--fg-disabled);
+    margin-bottom: 8px;
+  }
+
+  .skill-bar-track {
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .skill-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+  }
+
+  .skill-bar-fill.developing   { background: #A8D5CE; }
+  .skill-bar-fill.intermediate { background: var(--accent); opacity: 0.7; }
+  .skill-bar-fill.advanced     { background: var(--accent); }
+</style>
+
+<div class="page-header">
+  <h1>Skill tracker</h1>
+  <p>Skills you've built across your degree so far.</p>
+</div>
+
+<div class="tracker-stats">
+  <div class="tracker-stat">
+    <div class="tracker-stat-icon"></div>
+    <div>
+      <div class="tracker-stat-number">{{ skill_count }}</div>
+      <div class="tracker-stat-label">Skills tracked</div>
+    </div>
+  </div>
+  <div class="tracker-stat">
+    <div class="tracker-stat-icon"></div>
+    <div>
+      <div class="tracker-stat-number">{{ course_count }}</div>
+      <div class="tracker-stat-label">Courses completed</div>
+    </div>
+  </div>
+</div>
+
+{% if categories %}
+  {% for category in categories %}
+  <div class="tracker-section">
+    <div class="tracker-section-label">{{ category.name }}</div>
+    {% for item in category.skills %}
+    <div class="skill-row">
+      <div class="skill-row-header">
+        <span class="skill-row-name">{{ item.name }}</span>
+        <span class="skill-row-level {{ item.level|lower }}">{{ item.level }}</span>
+      </div>
+      <div class="skill-row-sub">
+        Developed across {{ item.count }} course{% if item.count != 1 %}s{% endif %}
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill {{ item.level|lower }}" style="width: {{ item.progress }}%"></div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+{% else %}
+<div class="compare-empty" style="margin-top: 24px;">
+  <p>No skills tracked yet — save some courses first to see your progress here.</p>
+  <a href="/courses/" class="btn btn-ghost" style="margin-top: 16px; display: inline-flex;">Browse courses</a>
+</div>
+{% endif %}
+
+{% endblock %}

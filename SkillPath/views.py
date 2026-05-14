@@ -1,6 +1,7 @@
 from re import L
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Course, Skill, Career
+from collections import defaultdict, Counter
 
 
 def index(request):
@@ -134,3 +135,51 @@ def validate(request):
         )
 
     return render(request, "SkillPath/validate.html", context)
+
+
+def skill_tracker(request):
+    saved = request.session.get("saved_courses", [])
+    saved_courses = Course.objects.filter(pk__in=saved).prefetch_related("skills")
+
+    skill_counter = Counter()
+    for course in saved_courses:
+        for skill in course.skills.all():
+            skill_counter[skill.pk] += 1
+
+    skills = Skill.objects.filter(pk__in=skill_counter.keys())
+
+    grouped = defaultdict(list)
+
+    for skill in skills:
+        count = skill_counter[skill.pk]
+
+        if count >= 4:
+            level = "Advanced"
+
+        elif count >= 2:
+            level = "Intermediate"
+
+        else:
+            level = "Devel0pong"
+
+        grouped[skill.get_category_display()].append(
+            {
+                "name": skill.name,
+                "count": count,
+                "level": level,
+                "progress": progress,
+            }
+        )
+
+    categories = [
+        {"name": category_name, "skills": skill_list}
+        for category_name, skill_list in grouped.items()
+    ]
+
+    context = {
+        "categories": categories,
+        "skill_count": len(skill_counter),
+        "course_count": len(saved),
+    }
+
+    return render(request, "SkillPath/skill_tracker.html", context)

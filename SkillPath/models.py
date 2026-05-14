@@ -6,8 +6,21 @@ class Skill(models.Model):
     Skills you know
     """
 
+    # This is for SKill Tracker
+    CATEGORY_CHOICES = [
+        ("data", "Data & Analysis"),
+        ("technical", "Technical"),
+        ("research", "Research & Communication"),
+        ("business", "Business"),
+        ("other", "Other"),
+    ]
+
     name = models.CharField(max_length=100)
     description = models.TextField()
+
+    category = models.CharField(
+        max_length=50, choices=CATEGORY_CHOICES, default="other"
+    )
 
     def __str__(self):
         return str(self.name)

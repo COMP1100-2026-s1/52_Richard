@@ -19,4 +19,5 @@ urlpatterns = [
     path("plan/add/<int:pk>/", views.plan_add, name="plan_add"),
     path("plan/remove/<int:pk>/", views.plan_remove, name="plan_remove"),
     path("validate/", views.validate, name="validate"),
+    path("skill-tracker/", views.skill_tracker, name="skill_tracker"),
 ]

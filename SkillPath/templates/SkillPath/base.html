@@ -32,7 +32,7 @@
 
     <div class="nav-group">
       <div class="nav-group-label">My Progress</div>
-      <a href="#" class="nav-item">Skill tracker</a>
+      <a href="/skill-tracker/" class="nav-item {% block nav_skill_tracker %}{% endblock %}">Skill tracker</a>
       <a href="/plan/" class="nav-item {% block nav_plan %}{% endblock %}">
         Saved courses
         {% if request.session.saved_courses %}
