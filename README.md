@@ -103,21 +103,26 @@
 │       │   │   ├── Interview_4_2026_4_27_4.md
 │       │   │   └── Interview_5_2026_4_27_5.md
 │       │   └── Post Prototype/
-│       │       └── Interview_6_2026_4_29_6.md
+│       │       ├── Interview_6_2026_4_29_6.md
+│       │       └── Interview_7_2026_5_12_&.md
 │       ├── Eddie/
 │       │   ├── Pre-Prototype/
 │       │   │   ├── Interview_1_2026_04_26_1.md
 │       │   │   ├── Interview_2_2026_04_27_2.md
 │       │   │   └── Interview_3_2026_04_28_3.md
 │       │   └── Post-Prototype/
-│       │       ├── Interview_1_2026_05_10_1.md
-│       │       └── Interview_2_2026_05_11_2.md
+│       │       ├── Interview_1_2026_05_12_1.md
+│       │       └── Interview_2_2026_05_12_2.md
 │       ├── Jordan/
-│       │   ├── Interview_1_2026_04_26_1.md
-│       │   ├── Interview_2_2026_04_27_2.md
-│       │   ├── Interview_3_2026_04_27_3.md
-│       │   ├── Interview_4_2026_04_27_4.md
-│       │   └── Interview_5_2026_04_27_5.md
+│       │   ├── Pre prototype/
+│       │   │   ├── Interview_1_2026_04_26_1.md
+│       │   │   ├── Interview_2_2026_04_27_2.md
+│       │   │   ├── Interview_3_2026_04_27_3.md
+│       │   │   ├── Interview_4_2026_04_27_4.md
+│       │   │   └── Interview_5_2026_04_27_5.md
+│       │   └── PostPrototype/
+│       │       ├── Interview_6_2026_05_13_6.md
+│       │       └── Interview_7_2026_05_13_7.md
 │       ├── Pranusha/
 │       │   ├── Pre-Prototype/
 │       │   │   ├── Interview_1_2026_04_27_1.md
@@ -151,8 +156,11 @@
 │   │   └── 02_04_2026_Meeting.pdf
 │   ├── Meeting 5 - 28 April/
 │   │   └── 28_04_2026_Meeting.pdf
-│   └── Meeting 6 -29 April/
-│       └── 29_04_2026_Meeting.pdf
+│   ├── Meeting 6 -29 April/
+│   │   └── 29_04_2026_Meeting.pdf
+│   └── Meeting 7 - 11 May/
+│       ├── 11-05-2026.pdf
+│       └── video1189439663.mp4
 ├── SkillPath/                          # Django app
 │   ├── migrations/
 │   ├── admin.py
