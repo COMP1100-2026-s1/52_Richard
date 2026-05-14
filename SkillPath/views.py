@@ -162,6 +162,8 @@ def skill_tracker(request):
         else:
             level = "Devel0pong"
 
+        progress = min(count * 20, 90)
+
         grouped[skill.get_category_display()].append(
             {
                 "name": skill.name,
