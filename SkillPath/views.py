@@ -8,11 +8,15 @@ from collections import defaultdict, Counter
 
 
 def index(request):
-    return render(request, "SkillPath/index.html", {
-        "course_count": Course.objects.count(),
-        "skill_count": Skill.objects.count(),
-        "career_count": Career.objects.count(),
-    })
+    return render(
+        request,
+        "SkillPath/index.html",
+        {
+            "course_count": Course.objects.count(),
+            "skill_count": Skill.objects.count(),
+            "career_count": Career.objects.count(),
+        },
+    )
 
 
 def course_list(request):
@@ -200,6 +204,7 @@ Reply with ONLY valid JSON in this exact format, no extra text:
 
             try:
                 from google import genai
+
                 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
                 response = client.models.generate_content(
                     model="gemini-2.5-flash-lite",
@@ -226,9 +231,11 @@ Reply with ONLY valid JSON in this exact format, no extra text:
                         "courses": recommended_courses,
                     }
                 else:
-                    error = "The advisor returned an unexpected response. Please try again."
+                    error = (
+                        "The advisor returned an unexpected response. Please try again."
+                    )
             except Exception:
-                error = "The AI advisor is currently unavailable. Check that ANTHROPIC_API_KEY is set."
+                error = "The AI advisor is currently unavailable. Check that GEMINI_API_KEYis set."
 
     return render(
         request,
@@ -260,7 +267,7 @@ def skill_tracker(request):
             level = "Intermediate"
 
         else:
-            level = "Devel0pong"
+            level = "Developing"
 
         progress = min(count * 20, 90)
 
