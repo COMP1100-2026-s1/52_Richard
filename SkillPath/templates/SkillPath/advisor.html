@@ -1,0 +1,396 @@
+{% extends "SkillPath/base.html" %}
+{% block nav_advisor %}active{% endblock %}
+
+{% block content %}
+<style>
+  .advisor-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 0 64px;
+  }
+
+  .advisor-header {
+    margin-bottom: 36px;
+  }
+
+  .advisor-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-subtle);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 14px;
+  }
+
+  .advisor-tag svg {
+    width: 14px; height: 14px;
+    fill: var(--accent);
+  }
+
+  .advisor-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--fg);
+    margin-bottom: 10px;
+  }
+
+  .advisor-subtitle {
+    font-size: 15px;
+    color: var(--fg-disabled);
+    line-height: 1.6;
+  }
+
+  .advisor-form {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 32px;
+  }
+
+  .advisor-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--fg);
+    margin-bottom: 10px;
+  }
+
+  .advisor-form textarea {
+    width: 100%;
+    min-height: 110px;
+    resize: vertical;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: var(--fg);
+    background: var(--bg);
+    outline: none;
+    transition: border-color var(--transition);
+    line-height: 1.6;
+  }
+
+  .advisor-form textarea:focus {
+    border-color: var(--accent);
+  }
+
+  .advisor-form textarea::placeholder {
+    color: var(--fg-disabled);
+  }
+
+  .advisor-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+  }
+
+  .advisor-example-chip {
+    background: var(--accent-subtle);
+    color: var(--accent);
+    border: none;
+    border-radius: var(--radius-pill);
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background var(--transition);
+  }
+
+  .advisor-example-chip:hover {
+    background: var(--accent-mid);
+  }
+
+  .advisor-submit {
+    background: var(--accent);
+    color: var(--fg-inverse);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 11px 24px;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition);
+  }
+
+  .advisor-submit:hover {
+    background: var(--accent-hover);
+  }
+
+  .advisor-submit:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .advisor-loading {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    color: var(--fg-disabled);
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  .advisor-spinner {
+    width: 18px; height: 18px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .advisor-error {
+    background: #fff5f5;
+    border: 1px solid #fecdca;
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    color: #b91c1c;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .advisor-results {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .career-match-card {
+    background: var(--accent);
+    border-radius: 14px;
+    padding: 28px;
+    color: var(--fg-inverse);
+  }
+
+  .career-match-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 8px;
+  }
+
+  .career-match-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .career-match-reason {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.88;
+  }
+
+  .courses-section-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--fg-disabled);
+    margin-bottom: 14px;
+  }
+
+  .advisor-course-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: box-shadow var(--transition);
+  }
+
+  .advisor-course-card:hover {
+    box-shadow: var(--shadow-float);
+  }
+
+  .advisor-course-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .advisor-course-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .advisor-course-code {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+
+  .advisor-course-name {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--fg);
+  }
+
+  .advisor-course-diff {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    flex-shrink: 0;
+    align-self: flex-start;
+    text-transform: capitalize;
+  }
+
+  .diff-easy   { background: #d1fae5; color: #065f46; }
+  .diff-medium { background: #fef3c7; color: #92400e; }
+  .diff-hard   { background: #fee2e2; color: #991b1b; }
+
+  .advisor-course-reason {
+    font-size: 14px;
+    color: var(--fg-disabled);
+    line-height: 1.6;
+  }
+
+  .advisor-course-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-tag {
+    background: var(--accent-subtle);
+    color: var(--fg-accent);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+  }
+
+  .advisor-course-footer {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .advisor-course-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .advisor-course-link:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="advisor-wrap">
+
+  <div class="advisor-header">
+    <div class="advisor-tag">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-1-5h2v2h-2zm0-8h2v6h-2z"/>
+      </svg>
+      AI Advisor
+    </div>
+    <h1 class="advisor-title">Tell us your goal — we'll find your courses.</h1>
+    <p class="advisor-subtitle">Describe what you want to learn or where you want to work and the advisor will recommend the best UQ courses for you.</p>
+  </div>
+
+  <div class="advisor-form">
+    <form method="post" id="advisor-form">
+      {% csrf_token %}
+      <label for="goal">What do you want to achieve?</label>
+      <textarea
+        id="goal"
+        name="goal"
+        placeholder="e.g. I want to become a data scientist, or I enjoy solving algorithmic problems and want to break into software engineering..."
+      >{{ user_goal }}</textarea>
+
+      <div class="advisor-examples">
+        <button type="button" class="advisor-example-chip" onclick="fillExample(this)">I want to work in AI / machine learning</button>
+        <button type="button" class="advisor-example-chip" onclick="fillExample(this)">I want to become a software engineer</button>
+        <button type="button" class="advisor-example-chip" onclick="fillExample(this)">I'm interested in data and analytics</button>
+        <button type="button" class="advisor-example-chip" onclick="fillExample(this)">I want to design digital products</button>
+      </div>
+
+      <button type="submit" class="advisor-submit" id="advisor-btn">Get recommendations</button>
+    </form>
+
+    <div class="advisor-loading" id="advisor-loading">
+      <div class="advisor-spinner"></div>
+      Analysing your goal and matching courses…
+    </div>
+  </div>
+
+  {% if error %}
+  <div class="advisor-error">{{ error }}</div>
+  {% endif %}
+
+  {% if recommendation %}
+  <div class="advisor-results">
+
+    <div class="career-match-card">
+      <div class="career-match-label">Best career match</div>
+      <div class="career-match-name">{{ recommendation.career_match }}</div>
+      <div class="career-match-reason">{{ recommendation.career_reason }}</div>
+    </div>
+
+    <div>
+      <div class="courses-section-title">Recommended courses</div>
+      {% for item in recommendation.courses %}
+      <div class="advisor-course-card" style="margin-bottom: 12px;">
+        <div class="advisor-course-top">
+          <div class="advisor-course-meta">
+            <span class="advisor-course-code">{{ item.course.code }}</span>
+            <span class="advisor-course-name">{{ item.course.name }}</span>
+          </div>
+          <span class="advisor-course-diff diff-{{ item.course.difficulty }}">{{ item.course.get_difficulty_display }}</span>
+        </div>
+        <p class="advisor-course-reason">{{ item.reason }}</p>
+        {% if item.course.skills.all %}
+        <div class="advisor-course-skills">
+          {% for skill in item.course.skills.all %}
+          <span class="skill-tag">{{ skill.name }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <div class="advisor-course-footer">
+          <a href="/courses/{{ item.course.pk }}/" class="advisor-course-link">View course details</a>
+          <a href="/plan/add/{{ item.course.pk }}/" class="advisor-course-link">Save to plan</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+  {% endif %}
+
+</div>
+
+<script>
+  function fillExample(btn) {
+    document.getElementById('goal').value = btn.textContent.trim();
+  }
+
+  document.getElementById('advisor-form').addEventListener('submit', function () {
+    document.getElementById('advisor-btn').disabled = true;
+    document.getElementById('advisor-loading').style.display = 'flex';
+  });
+</script>
+{% endblock %}

@@ -1,5 +1,6 @@
 {% extends "SkillPath/base.html" %}
-{% block nav_validate %}active{% endblock %}
+{% block nav_validate %}active</div>
+{% endblock %}
 
 {% block content %}
 <div class="page-header">
@@ -7,6 +8,8 @@
   <p>Check how well a course matches your career goal before you enrol.</p>
 </div>
 
+
+<div class="page-body">
 <!-- Form -->
 <form method="POST" action="/validate/">
   {% csrf_token %}

@@ -4,34 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkillPath</title>
+  <title>SkillPath — The University of Queensland</title>
   <link rel="stylesheet" href="{% static 'SkillPath/style.css' %}">
 </head>
 <body>
 
   <aside class="sidebar">
 
-    <div class="sidebar-logo">
+    <a href="/" class="sidebar-logo" style="text-decoration:none;">
       <div class="sidebar-logo-mark">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
           <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
         </svg>
       </div>
-      <span class="sidebar-logo-text">Skill<span>Path</span></span>
-    </div>
+      <div>
+        <div class="sidebar-logo-text">SkillPath</div>
+        <div class="sidebar-logo-sub">Course Intelligence</div>
+      </div>
+    </a>
 
     <div class="nav-group">
-      <div class="nav-group-label">Discover</div>
+      <span class="nav-group-label">Discover</span>
       <a href="/" class="nav-item {% block nav_home %}{% endblock %}">Home</a>
       <a href="/courses/" class="nav-item {% block nav_courses %}{% endblock %}">Course browser</a>
       <a href="/validate/" class="nav-item {% block nav_validate %}{% endblock %}">Validate a course</a>
       <a href="/compare/" class="nav-item {% block nav_compare %}{% endblock %}">Compare courses</a>
       <a href="/careers/" class="nav-item {% block nav_careers %}{% endblock %}">Career pathways</a>
+      <a href="/advisor/" class="nav-item {% block nav_advisor %}{% endblock %}">AI advisor</a>
     </div>
 
     <div class="nav-group">
-      <div class="nav-group-label">My Progress</div>
+      <span class="nav-group-label">My Progress</span>
       <a href="/skill-tracker/" class="nav-item {% block nav_skill_tracker %}{% endblock %}">Skill tracker</a>
       <a href="/plan/" class="nav-item {% block nav_plan %}{% endblock %}">
         Saved courses
@@ -48,6 +52,13 @@
       <div>
         <div class="sidebar-user-name">William Mulya</div>
         <div class="sidebar-user-degree">B Engineering (Hons)</div>
+      </div>
+    </div>
+
+    <div class="sidebar-uq-brand">
+      <div class="sidebar-uq-lockup">
+        <div class="sidebar-uq-name">The University of Queensland</div>
+        <div class="sidebar-uq-sub">COMP1100 · Team 52</div>
       </div>
     </div>
 

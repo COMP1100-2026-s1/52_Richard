@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Brian\\\\Desktop\\\\UQ\\\\COMP1100\\\\52_Richard\" -Recurse -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(ConvertTo-Json)",
+      "Bash(Out-String)",
+      "WebSearch",
+      "WebFetch(domain:programs-courses.uq.edu.au)",
+      "Bash(pip install *)",
+      "Bash(python manage.py check)",
+      "Bash(python manage.py runserver)",
+      "Bash(python -c ' *)",
+      "Bash(python manage.py seed_data)"
+    ]
+  }
+}

@@ -1,11 +1,18 @@
 from re import L
+import json
+import os
+import re
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Course, Skill, Career
 from collections import defaultdict, Counter
 
 
 def index(request):
-    return render(request, "SkillPath/index.html", {})
+    return render(request, "SkillPath/index.html", {
+        "course_count": Course.objects.count(),
+        "skill_count": Skill.objects.count(),
+        "career_count": Career.objects.count(),
+    })
 
 
 def course_list(request):
@@ -135,6 +142,99 @@ def validate(request):
         )
 
     return render(request, "SkillPath/validate.html", context)
+
+
+def ai_advisor(request):
+    recommendation = None
+    error = None
+    user_goal = ""
+
+    if request.method == "POST":
+        user_goal = request.POST.get("goal", "").strip()
+
+        if user_goal:
+            courses = Course.objects.prefetch_related("skills").all()
+            careers = Career.objects.prefetch_related("skills").all()
+
+            course_data = [
+                {
+                    "code": c.code,
+                    "name": c.name,
+                    "difficulty": c.difficulty,
+                    "skills": [s.name for s in c.skills.all()],
+                }
+                for c in courses
+            ]
+
+            career_data = [
+                {
+                    "name": car.name,
+                    "description": car.description,
+                    "skills": [s.name for s in car.skills.all()],
+                }
+                for car in careers
+            ]
+
+            prompt = f"""You are a course advisor for SkillPath, a UQ course planning tool.
+A student has described their goal or interests:
+
+"{user_goal}"
+
+Available courses:
+{json.dumps(course_data, indent=2)}
+
+Career pathways and the skills they require:
+{json.dumps(career_data, indent=2)}
+
+Recommend the 3 to 5 most relevant courses for this student. Also identify the single best-matching career pathway.
+
+Reply with ONLY valid JSON in this exact format, no extra text:
+{{
+  "career_match": "<career name from the list>",
+  "career_reason": "<one or two sentences explaining why this career fits>",
+  "courses": [
+    {{"code": "<course code>", "reason": "<one or two sentences explaining why this course fits the student's goal>"}},
+    ...
+  ]
+}}"""
+
+            try:
+                from google import genai
+                client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+                response = client.models.generate_content(
+                    model="gemini-2.5-flash-lite",
+                    contents=prompt,
+                )
+                raw = response.text
+                json_match = re.search(r"\{.*\}", raw, re.DOTALL)
+                if json_match:
+                    data = json.loads(json_match.group())
+                    recommended_courses = []
+                    for item in data.get("courses", []):
+                        try:
+                            course = Course.objects.prefetch_related("skills").get(
+                                code=item["code"]
+                            )
+                            recommended_courses.append(
+                                {"course": course, "reason": item["reason"]}
+                            )
+                        except Course.DoesNotExist:
+                            pass
+                    recommendation = {
+                        "career_match": data.get("career_match"),
+                        "career_reason": data.get("career_reason"),
+                        "courses": recommended_courses,
+                    }
+                else:
+                    error = "The advisor returned an unexpected response. Please try again."
+            except Exception:
+                error = "The AI advisor is currently unavailable. Check that ANTHROPIC_API_KEY is set."
+
+    return render(
+        request,
+        "SkillPath/advisor.html",
+        {"recommendation": recommendation, "error": error, "user_goal": user_goal},
+    )
 
 
 def skill_tracker(request):

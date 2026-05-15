@@ -7,6 +7,8 @@
   <p>Search by skill, career role, or course name to find the right elective.</p>
 </div>
 
+<div class="page-body">
+
 <div class="filter-bar">
   <div class="filter-tabs">
     <button class="filter-tab active" onclick="setTab('all', this)">All</button>
@@ -89,6 +91,8 @@
   <div class="empty-state"><p>No courses found.</p></div>
   {% endfor %}
 </div>
+
+</div>{# end page-body #}
 
 {% if request.session.compare_list %}
 <div class="compare-bar">

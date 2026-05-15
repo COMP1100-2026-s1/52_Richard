@@ -1,6 +1,7 @@
 # Core
 Django==6.0.5
 python-dotenv==1.2.2
+google-genai>=1.0.0
 
 # Authentication
 django-allauth==65.3.0

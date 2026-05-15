@@ -1,5 +1,6 @@
 {% extends "SkillPath/base.html" %}
-{% block nav_plan %}active{% endblock %}
+{% block nav_plan %}active</div>
+{% endblock %}
 
 {% block content %}
 <div class="page-header">
@@ -7,6 +8,8 @@
   <p>{{ courses|length }} course{% if courses|length != 1 %}s{% endif %} in your plan</p>
 </div>
 
+
+<div class="page-body">
 {% if courses %}
 
 <div class="course-list">

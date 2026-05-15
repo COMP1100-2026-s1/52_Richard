@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="detail-header">
-  <a href="/courses/" class="back-link" style="margin-bottom:12px; display:inline-flex;">← Back to results</a>
+  <a href="/courses/" class="back-link" style="margin-bottom:12px; display:inline-flex; color:rgba(255,255,255,0.65);">← Back to results</a>
 
   <div class="course-code">{{ course.code }}</div>
   <h1>{{ course.name }}</h1>
@@ -39,6 +39,8 @@
   </div>
 
 </div>
+
+<div class="detail-body">
 
 <div class="detail-tabs">
   <button class="detail-tab active" onclick="switchTab('skills', this)">Skills &amp; careers</button>
@@ -162,4 +164,5 @@ function switchTab(name, btn) {
 }
 </script>
 
+</div>{# end detail-body #}
 {% endblock %}

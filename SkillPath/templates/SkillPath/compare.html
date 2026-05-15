@@ -1,5 +1,6 @@
 {% extends "SkillPath/base.html" %}
-{% block nav_compare %}active{% endblock %}
+{% block nav_compare %}active</div>
+{% endblock %}
 
 {% block content %}
 <div class="page-header">
@@ -7,6 +8,8 @@
   <p>Differences are highlighted — green means better for that metric.</p>
 </div>
 
+
+<div class="page-body">
 {% if courses|length == 2 %}
 
 {% with c0=courses.0 c1=courses.1 %}
