@@ -18,6 +18,17 @@
   {"model": "SkillPath.skill", "pk": 17, "fields": {"name": "Linear Algebra and Calculus",       "description": "Vectors, matrices, eigenvalues, differentiation, integration, and Taylor series with engineering applications."}},
   {"model": "SkillPath.skill", "pk": 18, "fields": {"name": "Engineering Design",                "description": "Statics, materials science, estimation, and hands-on design-build-test methodology for engineering projects."}},
 
+  {"model": "SkillPath.skill", "pk": 19, "fields": {"name": "Financial Accounting",              "description": "Recording, analysing, and interpreting financial statements to communicate a business's financial position to external stakeholders."}},
+  {"model": "SkillPath.skill", "pk": 20, "fields": {"name": "Managerial Accounting",             "description": "Internal accounting techniques including costing, budgeting, and performance analysis to support managerial decision making."}},
+  {"model": "SkillPath.skill", "pk": 21, "fields": {"name": "Corporate Finance",                 "description": "Time value of money, valuation, capital budgeting, risk-return analysis, and the Capital Asset Pricing Model for investment decisions."}},
+  {"model": "SkillPath.skill", "pk": 22, "fields": {"name": "Marketing Strategy",                "description": "Designing and evaluating marketing plans grounded in theories of markets, segmentation, positioning, and competitive analysis."}},
+  {"model": "SkillPath.skill", "pk": 23, "fields": {"name": "Consumer Behaviour",                "description": "Applying behavioural science and psychology to understand how individuals and groups make purchasing and product-adoption decisions."}},
+  {"model": "SkillPath.skill", "pk": 24, "fields": {"name": "Business Analytics",                "description": "Using quantitative analysis, statistics, and data tools to derive insights that support business and strategic decisions."}},
+  {"model": "SkillPath.skill", "pk": 25, "fields": {"name": "Economic Reasoning",                "description": "Microeconomic principles of resource allocation, incentives, and decision-making under scarcity by individuals, firms, and governments."}},
+  {"model": "SkillPath.skill", "pk": 26, "fields": {"name": "Entrepreneurship",                  "description": "Identifying opportunities, designing business and impact models, and launching new ventures using discovery-driven approaches."}},
+  {"model": "SkillPath.skill", "pk": 27, "fields": {"name": "Operations Management",             "description": "Designing and managing processes that produce goods and services efficiently, including supply chain, quality, and resource planning."}},
+  {"model": "SkillPath.skill", "pk": 28, "fields": {"name": "Negotiation and Leadership",        "description": "Leading teams, navigating diverse cultural contexts, and conducting effective negotiation in business and management settings."}},
+
   {
     "model": "SkillPath.course", "pk": 1,
     "fields": {
@@ -180,6 +191,60 @@
       "peer": 0.0, "skills": [18], "prerequisites": [12]
     }
   },
+  {
+    "model": "SkillPath.course", "pk": 19,
+    "fields": {
+      "code": "ACCT1101", "name": "Accounting for Decision Making",
+      "description": "Introduces the accounting environment and the analysis and interpretation of financial statements and other business information to support managerial and investment decisions.",
+      "difficulty": "easy", "workload": "~4 hrs/week contact", "assessment_type": "Assignments, Examination",
+      "peer": 0.0, "skills": [19, 20], "prerequisites": []
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 20,
+    "fields": {
+      "code": "FINM2401", "name": "Financial Management",
+      "description": "Comprehensive introduction to financial management and analysis, covering time value of money, valuation, capital budgeting, risk, and the Capital Asset Pricing Model with a focus on creating shareholder value.",
+      "difficulty": "medium", "workload": "~4 hrs/week contact", "assessment_type": "Assignments, Examination",
+      "peer": 0.0, "skills": [21, 24], "prerequisites": [19]
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 21,
+    "fields": {
+      "code": "MKTG1501", "name": "Foundations of Marketing",
+      "description": "Examines theories of markets and marketing, consumer behaviour, applications of behavioural science, and the basic principles underpinning marketing strategy.",
+      "difficulty": "easy", "workload": "~4 hrs/week contact", "assessment_type": "Assignments, Examination",
+      "peer": 0.0, "skills": [22, 23], "prerequisites": []
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 22,
+    "fields": {
+      "code": "ECON1010", "name": "Introductory Microeconomics",
+      "description": "Provides a practical understanding of the core economic principles that explain why individuals, firms, and governments make decisions, focusing on resource allocation under scarcity.",
+      "difficulty": "easy", "workload": "~3 hrs/week contact", "assessment_type": "Assignments, Tutorials, Examination",
+      "peer": 0.0, "skills": [25], "prerequisites": []
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 23,
+    "fields": {
+      "code": "MGTS1301", "name": "Introduction to Management",
+      "description": "Introduces the fundamental principles of managing business organisations, covering management functions, strategic frameworks, responsible leadership, and teamwork in diverse cultural contexts.",
+      "difficulty": "easy", "workload": "~3 hrs/week contact", "assessment_type": "Assignments, Tutorials, Examination",
+      "peer": 0.0, "skills": [28, 14], "prerequisites": []
+    }
+  },
+  {
+    "model": "SkillPath.course", "pk": 24,
+    "fields": {
+      "code": "TIMS3304", "name": "Social Entrepreneurship",
+      "description": "Practical, ground-up business learning focused on creating both social and financial value, integrating social impact and business models through discovery-driven approaches.",
+      "difficulty": "medium", "workload": "~3 hrs/week contact", "assessment_type": "Practical Demonstrations, Reflective Portfolio",
+      "peer": 0.0, "skills": [26, 15], "prerequisites": []
+    }
+  },
 
   {
     "model": "SkillPath.career", "pk": 1,
@@ -219,6 +284,54 @@
       "name": "Full-Stack Web Developer",
       "description": "Builds end-to-end web applications handling both front-end interfaces and back-end databases and APIs.",
       "skills": [1, 2, 11, 12], "courses": [1, 2, 5, 11]
+    }
+  },
+  {
+    "model": "SkillPath.career", "pk": 6,
+    "fields": {
+      "name": "Financial Analyst",
+      "description": "Evaluates financial data, builds valuation models, and provides investment recommendations to support corporate and client decision making.",
+      "skills": [20, 21, 24], "courses": [19, 20, 22]
+    }
+  },
+  {
+    "model": "SkillPath.career", "pk": 7,
+    "fields": {
+      "name": "Management Consultant",
+      "description": "Advises organisations on strategy, operations, and performance using analytical frameworks, economic reasoning, and strong communication skills.",
+      "skills": [24, 25, 27, 14], "courses": [22, 23]
+    }
+  },
+  {
+    "model": "SkillPath.career", "pk": 8,
+    "fields": {
+      "name": "Marketing Manager",
+      "description": "Plans and executes marketing strategies grounded in consumer behaviour and market analytics to grow brands and product lines.",
+      "skills": [22, 23, 24], "courses": [21, 23]
+    }
+  },
+  {
+    "model": "SkillPath.career", "pk": 9,
+    "fields": {
+      "name": "Startup Founder",
+      "description": "Identifies opportunities and launches new ventures by combining innovation, prototyping, and resilient leadership.",
+      "skills": [26, 15, 28], "courses": [4, 23, 24]
+    }
+  },
+  {
+    "model": "SkillPath.career", "pk": 10,
+    "fields": {
+      "name": "Operations Manager",
+      "description": "Designs and manages production and service processes to deliver value efficiently while leading cross-functional teams.",
+      "skills": [27, 14, 28], "courses": [19, 23]
+    }
+  },
+  {
+    "model": "SkillPath.career", "pk": 11,
+    "fields": {
+      "name": "Business Analyst",
+      "description": "Bridges business and technology by analysing requirements, data, and processes to drive informed organisational decisions.",
+      "skills": [24, 25, 11], "courses": [5, 19, 22]
     }
   }
 ]
