@@ -37,10 +37,7 @@
       <div class="career-course-list">
         {% for course in career.courses.all %}
         <a href="/courses/{{ course.pk }}/" class="career-course-item">
-          <div>
-            <div class="course-code">{{ course.code }}</div>
-            <div>{{ course.name }}</div>
-          </div>
+          <div class="career-course-title">{{ course.code }} &mdash; {{ course.name }}</div>
         </a>
         {% empty %}
         <span style="font-size:13px; color:var(--fg-disabled)">No courses linked.</span>

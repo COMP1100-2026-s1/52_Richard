@@ -49,7 +49,7 @@
 
   .home-hero-dot {
     width: 6px; height: 6px;
-    background: #BB9D65;
+    background: #FFA200;
     border-radius: 50%;
   }
 
@@ -84,8 +84,8 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: white;
-    color: #51247A;
+    background: #2377CB;
+    color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -96,7 +96,7 @@
     letter-spacing: 0.01em;
   }
 
-  .hero-btn-primary:hover { background: #F0EAF8; transform: translateY(-1px); }
+  .hero-btn-primary:hover { background: #1A5FA8; transform: translateY(-1px); }
 
   .hero-btn-ghost {
     display: inline-flex;
@@ -136,7 +136,7 @@
     font-family: 'Merriweather', Georgia, serif;
     font-size: 28px;
     font-weight: 700;
-    color: #BB9D65;
+    color: #FFA200;
     line-height: 1;
   }
 
@@ -160,6 +160,52 @@
     margin-bottom: 20px;
   }
 
+  .home-cards-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .home-page-btn {
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.15);
+    background: white;
+    color: #51247A;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 140ms, border-color 140ms;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .home-page-btn:hover:not(:disabled) { background: #EDE8F5; border-color: #51247A; }
+  .home-page-btn:disabled { opacity: 0.35; cursor: default; }
+
+  .home-page-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .home-page-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: rgba(81,36,122,0.20);
+    transition: background 180ms, transform 180ms;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+
+  .home-page-dot.active {
+    background: #FFA200;
+    transform: scale(1.35);
+  }
+
   .home-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -176,37 +222,30 @@
     flex-direction: column;
     gap: 8px;
     border: 1px solid rgba(0,0,0,0.10);
-    border-top: 3px solid #51247A;
-    transition: box-shadow 160ms ease-out, transform 160ms ease-out;
+    border-top: 3px solid transparent;
+    transition: box-shadow 160ms ease-out, transform 160ms ease-out, border-color 160ms ease-out, opacity 200ms ease-out;
     box-shadow: 0 1px 3px rgba(0,0,0,0.07);
-    opacity: 0;
-    animation: cardIn 0.3s ease-out forwards;
   }
 
-  .home-card:nth-child(1) { animation-delay: 0.10s; }
-  .home-card:nth-child(2) { animation-delay: 0.16s; }
-  .home-card:nth-child(3) { animation-delay: 0.22s; }
-
-  @keyframes cardIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to   { opacity: 1; transform: translateY(0); }
+  .home-card:hover {
+    border-top-color: #FFA200;
+    box-shadow: 0 4px 16px rgba(255,162,0,0.18);
+    transform: translateY(-2px);
   }
-
-  .home-card:hover { box-shadow: 0 4px 16px rgba(81,36,122,0.12); transform: translateY(-2px); }
 
   .home-card-num {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10.5px;
     font-weight: 500;
     color: #51247A;
-    opacity: 0.60;
+    opacity: 0.55;
     letter-spacing: 0.06em;
   }
 
   .home-card-title {
     font-size: 18px;
     font-weight: 700;
-    color: #1C1C1C;
+    color: #51247A;
     line-height: 1.2;
     margin-top: 4px;
   }
@@ -259,31 +298,110 @@
 </div>
 
 <div class="home-cards-section">
-  <div class="home-section-label">What would you like to do?</div>
-  <div class="home-cards">
+  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
+    <div class="home-section-label">What would you like to do?</div>
+    <div class="home-cards-nav">
+      <div class="home-page-dots" id="homeDots"></div>
+      <button class="home-page-btn" id="homePrev" onclick="homeGoTo(homePage-1)">&#8592;</button>
+      <button class="home-page-btn" id="homeNext" onclick="homeGoTo(homePage+1)">&#8594;</button>
+    </div>
+  </div>
+  <div class="home-cards" id="homeCards">
 
-    <a href="/courses/" class="home-card">
+    <a href="/courses/" class="home-card" data-page="0">
       <div class="home-card-num">01 / EXPLORE</div>
       <div class="home-card-title">Browse Courses</div>
       <div class="home-card-desc">Search by skill, career outcome, or course code. Find the right elective for your goals before you enrol.</div>
       <div class="home-card-cta">Start browsing <span>→</span></div>
     </a>
 
-    <a href="/advisor/" class="home-card">
+    <a href="/advisor/" class="home-card" data-page="0">
       <div class="home-card-num">02 / AI</div>
       <div class="home-card-title">AI Course Advisor</div>
       <div class="home-card-desc">Describe your career goal in plain English and get personalised course recommendations powered by Gemini.</div>
       <div class="home-card-cta">Get advice <span>→</span></div>
     </a>
 
-    <a href="/validate/" class="home-card">
+    <a href="/validate/" class="home-card" data-page="0">
       <div class="home-card-num">03 / VALIDATE</div>
       <div class="home-card-title">Validate a Course</div>
       <div class="home-card-desc">Already have a course in mind? Check how well its skills align with your target career before you commit.</div>
       <div class="home-card-cta">Check fit <span>→</span></div>
     </a>
 
+    <a href="/compare/" class="home-card" data-page="1">
+      <div class="home-card-num">04 / COMPARE</div>
+      <div class="home-card-title">Compare Courses</div>
+      <div class="home-card-desc">Place two courses side by side to compare their skills, difficulty, and workload at a glance.</div>
+      <div class="home-card-cta">Compare now <span>→</span></div>
+    </a>
+
+    <a href="/careers/" class="home-card" data-page="1">
+      <div class="home-card-num">05 / PATHWAYS</div>
+      <div class="home-card-title">Career Pathways</div>
+      <div class="home-card-desc">Explore career destinations and discover exactly which courses build the skills each role demands.</div>
+      <div class="home-card-cta">Explore careers <span>→</span></div>
+    </a>
+
+    <a href="/skill-tracker/" class="home-card" data-page="1">
+      <div class="home-card-num">06 / TRACK</div>
+      <div class="home-card-title">Skill Tracker</div>
+      <div class="home-card-desc">Mark skills you have already developed and see how your profile stacks up against your dream role.</div>
+      <div class="home-card-cta">Track skills <span>→</span></div>
+    </a>
+
   </div>
 </div>
+
+<script>
+  const HOME_PER_PAGE = 3;
+  let homePage = 0;
+
+  function homeGoTo(p) {
+    const cards = document.querySelectorAll('#homeCards .home-card');
+    const totalPages = Math.ceil(cards.length / HOME_PER_PAGE);
+    if (p < 0 || p >= totalPages) return;
+    homePage = p;
+
+    cards.forEach(c => {
+      const belongs = parseInt(c.dataset.page) === homePage;
+      c.style.display = belongs ? 'flex' : 'none';
+      if (belongs) {
+        c.style.animation = 'none';
+        c.style.opacity = '0';
+        c.style.transform = 'translateY(8px)';
+        requestAnimationFrame(() => {
+          c.style.transition = 'opacity 220ms ease-out, transform 220ms ease-out, box-shadow 160ms, border-color 160ms';
+          c.style.opacity = '1';
+          c.style.transform = 'translateY(0)';
+        });
+      }
+    });
+
+    // update dots
+    document.querySelectorAll('.home-page-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === homePage);
+    });
+
+    document.getElementById('homePrev').disabled = homePage === 0;
+    document.getElementById('homeNext').disabled = homePage === totalPages - 1;
+  }
+
+  function initHomeCards() {
+    const cards = document.querySelectorAll('#homeCards .home-card');
+    const totalPages = Math.ceil(cards.length / HOME_PER_PAGE);
+    const dotsEl = document.getElementById('homeDots');
+    dotsEl.innerHTML = '';
+    for (let i = 0; i < totalPages; i++) {
+      const d = document.createElement('button');
+      d.className = 'home-page-dot' + (i === 0 ? ' active' : '');
+      d.onclick = () => homeGoTo(i);
+      dotsEl.appendChild(d);
+    }
+    homeGoTo(0);
+  }
+
+  document.addEventListener('DOMContentLoaded', initHomeCards);
+</script>
 
 {% endblock %}
