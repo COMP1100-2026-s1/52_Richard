@@ -6,8 +6,7 @@
 <div class="detail-header">
   <a href="/courses/" class="back-link" style="margin-bottom:12px; display:inline-flex; color:rgba(255,255,255,0.65);">← Back to results</a>
 
-  <div class="course-code">{{ course.code }}</div>
-  <h1>{{ course.name }}</h1>
+  <h1>{{ course.code }} &mdash; {{ course.name }}</h1>
 
   <div class="detail-meta">
     <span>{{ course.workload }}</span>
@@ -16,8 +15,12 @@
     <span class="detail-meta-sep">·</span>
     <span>{{ course.assessment_type }}</span>
     <span class="detail-meta-sep">·</span>
-    <span class="stars">★★★☆☆</span>
-    <span style="font-size:13px; color:var(--fg-disabled);">— (not yet rated)</span>
+    {% if course.peer > 0 %}
+    <span class="stars">{% for i in "12345" %}{% if forloop.counter <= course.peer %}★{% else %}☆{% endif %}{% endfor %}</span>
+    <span style="font-size:13px; color:var(--fg-disabled);">{{ course.peer }}/5</span>
+    {% else %}
+    <span style="font-size:13px; color:var(--fg-disabled);">Not yet rated</span>
+    {% endif %}
   </div>
 
   {% if course.prerequisites.all %}
@@ -59,20 +62,8 @@
       <div class="skill-row">
         <div class="skill-row-header">
           <span class="skill-row-name">{{ skill.name }}</span>
-          <span class="skill-row-level">
-            {% if forloop.counter == 1 %}Advanced
-            {% elif forloop.counter == 2 %}Intermediate
-            {% else %}Developing{% endif %}
-          </span>
         </div>
-        <div class="skill-row-sub">{{ skill.description|truncatewords:8 }}</div>
-        <div class="skill-bar-track">
-          <div class="skill-bar-fill" style="width:
-            {% if forloop.counter == 1 %}85%
-            {% elif forloop.counter == 2 %}60%
-            {% else %}35%{% endif %}
-          ;"></div>
-        </div>
+        {% if skill.description %}<div class="skill-row-sub">{{ skill.description }}</div>{% endif %}
       </div>
       {% empty %}
       <p style="color:var(--fg-disabled); font-size:14px;">No skills listed for this course.</p>
@@ -84,22 +75,11 @@
       <p>Job titles these skills map to directly.</p>
       {% for career in course.career.all %}
       <div class="career-pathway-item">
-        <div class="career-pathway-icon"></div>
-        <div>
-          <div class="career-pathway-name">{{ career.name }}</div>
-          <div class="career-pathway-sub">Based on UQ graduate outcomes</div>
-        </div>
+        <div class="career-pathway-name">{{ career.name }}</div>
       </div>
       {% empty %}
       <p style="color:var(--fg-disabled); font-size:14px;">No career pathways linked.</p>
       {% endfor %}
-
-      <div class="all-skills-label">All skills at a glance</div>
-      <div class="tags">
-        {% for skill in course.skills.all %}
-        <span class="tag">{{ skill.name }}</span>
-        {% endfor %}
-      </div>
     </div>
 
   </div>
@@ -110,7 +90,7 @@
   <div class="info-grid">
     <div class="info-section">
       <h3>About this course</h3>
-      <p style="font-size:14px; line-height:1.7; color:var(--fg-disabled);">{{ course.description }}</p>
+      <p style="font-size:14px; line-height:1.7; color:var(--fg-mid);">{{ course.description }}</p>
     </div>
     <div class="info-section">
       <h3>Course details</h3>
@@ -138,21 +118,40 @@
 
 <!-- Tab: Pathway -->
 <div class="tab-panel" id="tab-prereqs">
-  <h3 style="font-size:16px; font-weight:600; margin-bottom:16px;">Prerequisites</h3>
-  {% if course.prerequisites.all %}
-  <div class="prereq-list">
-    {% for prereq in course.prerequisites.all %}
-    <a href="/courses/{{ prereq.pk }}/" class="prereq-item">
-      <div>
-        <div class="prereq-code">{{ prereq.code }}</div>
-        <div>{{ prereq.name }}</div>
+  <div class="pathway-grid">
+    <div>
+      <h3 class="pathway-heading">Must complete first</h3>
+      {% if course.prerequisites.all %}
+      <div class="prereq-list">
+        {% for prereq in course.prerequisites.all %}
+        <a href="/courses/{{ prereq.pk }}/" class="prereq-item">
+          <span class="prereq-code">{{ prereq.code }}</span>
+          <span class="prereq-sep">&mdash;</span>
+          <span>{{ prereq.name }}</span>
+        </a>
+        {% endfor %}
       </div>
-    </a>
-    {% endfor %}
+      {% else %}
+      <p class="pathway-empty">No prerequisites — open to all students.</p>
+      {% endif %}
+    </div>
+    <div>
+      <h3 class="pathway-heading">Unlocks next</h3>
+      {% if unlocks %}
+      <div class="prereq-list">
+        {% for next in unlocks %}
+        <a href="/courses/{{ next.pk }}/" class="prereq-item prereq-item--unlocks">
+          <span class="prereq-code">{{ next.code }}</span>
+          <span class="prereq-sep">&mdash;</span>
+          <span>{{ next.name }}</span>
+        </a>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="pathway-empty">No courses require this as a prerequisite.</p>
+      {% endif %}
+    </div>
   </div>
-  {% else %}
-  <p style="font-size:14px; color:var(--fg-disabled);">No prerequisites required.</p>
-  {% endif %}
 </div>
 
 <script>

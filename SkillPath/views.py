@@ -26,7 +26,8 @@ def course_list(request):
 
 def course_detail(request, pk):
     course = get_object_or_404(Course, pk=pk)
-    return render(request, "SkillPath/course_detail.html", {"course": course})
+    unlocks = Course.objects.filter(prerequisites=course)
+    return render(request, "SkillPath/course_detail.html", {"course": course, "unlocks": unlocks})
 
 
 def career_list(request):
