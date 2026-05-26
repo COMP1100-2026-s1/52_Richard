@@ -163,5 +163,22 @@ function switchTab(name, btn) {
 }
 </script>
 
+{% if related %}
+<div class="section" style="margin-top: 32px;">
+  <h2 style="margin-bottom: 5px;">You might also like</h2>
+  <div class="course-grid">
+    {% for r in related %}
+    <a href="/courses/{{ r.pk }}/" class="course-card">
+      <div class="course-card-code">{{ r.code }}</div>
+      <div class="course-card-name">{{ r.name }}</div>
+      <div class="course-card-meta">
+        <span class="tag tag-difficulty {{ r.difficulty }}">{{ r.get_difficulty_display }}</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
 </div>{# end detail-body #}
 {% endblock %}
