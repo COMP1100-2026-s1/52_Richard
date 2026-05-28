@@ -21,7 +21,8 @@ def index(request):
 
 def course_list(request):
     courses = Course.objects.all()
-    return render(request, "SkillPath/course_list.html", {"courses": courses})
+    skills = Skill.objects.all()
+    return render(request, "SkillPath/course_list.html", {"courses": courses, "skills": skills})
 
 
 def course_detail(request, pk):
