@@ -2,7 +2,8 @@
 
 # Environment variables - never commit this
 .env
-
+.claude/
+ClAUDE.md
 # Django
 db.sqlite3
 __pycache__/

@@ -1,0 +1,190 @@
+{% extends "SkillPath/base.html" %}
+{% block nav_compare %}active</div>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Compare courses</h1>
+  <p>Differences are highlighted — green means better for that metric.</p>
+</div>
+
+
+<div class="page-body">
+{% if courses|length == 2 %}
+
+{% with c0=courses.0 c1=courses.1 %}
+
+<!-- Course header + comparison table -->
+<div class="compare-table">
+
+  <div class="compare-table-header">
+    <div class="compare-table-header-empty"></div>
+    <div class="compare-course-header">
+      <div class="compare-course-code">{{ c0.code }}</div>
+      <div class="compare-course-name">{{ c0.name }}</div>
+      <div class="compare-course-school">{{ c0.workload }}</div>
+    </div>
+    <div class="compare-course-header">
+      <div class="compare-course-code">{{ c1.code }}</div>
+      <div class="compare-course-name">{{ c1.name }}</div>
+      <div class="compare-course-school">{{ c1.workload }}</div>
+    </div>
+  </div>
+
+  <!-- Difficulty row -->
+  <div class="compare-row">
+    <div class="compare-row-label">Difficulty</div>
+    <div class="compare-row-value {% if c0.difficulty == 'easy' and c1.difficulty != 'easy' %}better{% elif c0.difficulty == 'medium' and c1.difficulty == 'hard' %}better{% endif %}">
+      {{ c0.get_difficulty_display }}
+    </div>
+    <div class="compare-row-value {% if c1.difficulty == 'easy' and c0.difficulty != 'easy' %}better{% elif c1.difficulty == 'medium' and c0.difficulty == 'hard' %}better{% endif %}">
+      {{ c1.get_difficulty_display }}
+    </div>
+  </div>
+
+  <!-- Workload row -->
+  <div class="compare-row">
+    <div class="compare-row-label">Workload</div>
+    <div class="compare-row-value">{{ c0.workload }}</div>
+    <div class="compare-row-value">{{ c1.workload }}</div>
+  </div>
+
+  <!-- Assessment row -->
+  <div class="compare-row">
+    <div class="compare-row-label">Assessment</div>
+    <div class="compare-row-value">{{ c0.assessment_type }}</div>
+    <div class="compare-row-value">{{ c1.assessment_type }}</div>
+  </div>
+
+  <!-- Peer rating row -->
+  <div class="compare-row">
+    <div class="compare-row-label">Peer rating</div>
+    <div class="compare-row-value {% if c0.peer > c1.peer %}better{% endif %}">
+      {% if c0.peer > 0 %}{{ c0.peer }} / 5{% else %}Not rated{% endif %}
+    </div>
+    <div class="compare-row-value {% if c1.peer > c0.peer %}better{% endif %}">
+      {% if c1.peer > 0 %}{{ c1.peer }} / 5{% else %}Not rated{% endif %}
+    </div>
+  </div>
+
+  <!-- Skills count row -->
+  <div class="compare-row">
+    <div class="compare-row-label">Skills taught</div>
+    <div class="compare-row-value {% if c0.skills.count > c1.skills.count %}better{% endif %}">
+      {{ c0.skills.count }} skill{% if c0.skills.count != 1 %}s{% endif %}
+    </div>
+    <div class="compare-row-value {% if c1.skills.count > c0.skills.count %}better{% endif %}">
+      {{ c1.skills.count }} skill{% if c1.skills.count != 1 %}s{% endif %}
+    </div>
+  </div>
+
+  <!-- Prerequisites row -->
+  <div class="compare-row">
+    <div class="compare-row-label">Prerequisites</div>
+    <div class="compare-row-value {% if c0.prerequisites.count < c1.prerequisites.count %}better{% endif %}">
+      {% if c0.prerequisites.count == 0 %}None{% else %}{{ c0.prerequisites.count }}{% endif %}
+    </div>
+    <div class="compare-row-value {% if c1.prerequisites.count < c0.prerequisites.count %}better{% endif %}">
+      {% if c1.prerequisites.count == 0 %}None{% else %}{{ c1.prerequisites.count }}{% endif %}
+    </div>
+  </div>
+
+</div>
+
+<!-- Skills breakdown -->
+<h2 style="font-size:20px; font-weight:600; margin-bottom:16px;">Skills breakdown</h2>
+<div class="skills-breakdown">
+
+  <div class="breakdown-col">
+    <div class="breakdown-label shared">Shared skills</div>
+    {% for skill in shared_skills %}
+    <div class="breakdown-skill shared">{{ skill.name }}</div>
+    {% empty %}
+    <div class="breakdown-empty">No skills in common</div>
+    {% endfor %}
+  </div>
+
+  <div class="breakdown-col">
+    <div class="breakdown-label first">Only in {{ c0.code }}</div>
+    {% for skill in only_first %}
+    <div class="breakdown-skill first">{{ skill.name }}</div>
+    {% empty %}
+    <div class="breakdown-empty">None unique</div>
+    {% endfor %}
+  </div>
+
+  <div class="breakdown-col">
+    <div class="breakdown-label second">Only in {{ c1.code }}</div>
+    {% for skill in only_second %}
+    <div class="breakdown-skill second">{{ skill.name }}</div>
+    {% empty %}
+    <div class="breakdown-empty">None unique</div>
+    {% endfor %}
+  </div>
+
+</div>
+
+<!-- Career outcomes -->
+<h2 style="font-size:20px; font-weight:600; margin-bottom:16px;">Career outcomes</h2>
+<div class="career-outcomes-grid">
+
+  <div class="career-outcomes-card">
+    <div class="career-outcomes-title">{{ c0.code }} — {{ c0.name }}</div>
+    {% for career in c0.career.all %}
+    <div class="career-outcome-item">{{ career.name }}</div>
+    {% empty %}
+    <div class="career-outcome-item">No career pathways linked.</div>
+    {% endfor %}
+  </div>
+
+  <div class="career-outcomes-card">
+    <div class="career-outcomes-title">{{ c1.code }} — {{ c1.name }}</div>
+    {% for career in c1.career.all %}
+    <div class="career-outcome-item">{{ career.name }}</div>
+    {% empty %}
+    <div class="career-outcome-item">No career pathways linked.</div>
+    {% endfor %}
+  </div>
+
+</div>
+
+<!-- Remove buttons -->
+<div style="display:flex; gap:12px; margin-top:8px;">
+  <a href="/compare/remove/{{ c0.pk }}/" class="btn btn-danger">Remove {{ c0.code }}</a>
+  <a href="/compare/remove/{{ c1.pk }}/" class="btn btn-danger">Remove {{ c1.code }}</a>
+</div>
+
+{% endwith %}
+
+{% elif courses|length == 1 %}
+
+{% with c0=courses.0 %}
+<div class="compare-table">
+  <div class="compare-table-header" style="grid-template-columns: 180px 1fr;">
+    <div class="compare-table-header-empty"></div>
+    <div class="compare-course-header">
+      <div class="compare-course-code">{{ c0.code }}</div>
+      <div class="compare-course-name">{{ c0.name }}</div>
+      <div class="compare-course-school">{{ c0.workload }}</div>
+    </div>
+  </div>
+</div>
+<div class="compare-empty" style="margin-top:16px;">
+  <p>Add a second course to compare.</p>
+  <a href="/courses/" class="btn btn-ghost" style="margin-top:16px; display:inline-flex;">Browse courses</a>
+</div>
+<div style="margin-top:16px;">
+  <a href="/compare/remove/{{ c0.pk }}/" class="btn btn-danger">Remove {{ c0.code }}</a>
+</div>
+{% endwith %}
+
+{% else %}
+
+<div class="compare-empty">
+  <p>No courses selected yet.</p>
+  <a href="/courses/" class="btn btn-ghost" style="margin-top:16px; display:inline-flex;">Browse courses</a>
+</div>
+
+{% endif %}
+
+{% endblock %}

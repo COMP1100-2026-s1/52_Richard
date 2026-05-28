@@ -1,0 +1,289 @@
+{% extends "SkillPath/base.html" %}
+{% block nav_home %}active{% endblock %}
+
+{% block content %}
+<style>
+  .home-hero {
+    background: #51247A;
+    background-image: linear-gradient(135deg, #3C1A5D 0%, #51247A 50%, #6B3FA0 100%);
+    padding: 52px 48px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .home-hero::after {
+    content: '';
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    pointer-events: none;
+  }
+
+  .home-hero::before {
+    content: '';
+    position: absolute;
+    right: 80px; bottom: -80px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(187,157,101,0.10);
+    pointer-events: none;
+  }
+
+  .home-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.20);
+    color: rgba(255,255,255,0.90);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .home-hero-dot {
+    width: 6px; height: 6px;
+    background: #BB9D65;
+    border-radius: 50%;
+  }
+
+  .home-hero h1 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    max-width: 560px;
+  }
+
+  .home-hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.65;
+    max-width: 480px;
+    font-weight: 300;
+    margin-bottom: 36px;
+  }
+
+  .home-hero-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #51247A;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 11px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 160ms ease-out, transform 160ms ease-out;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-btn-primary:hover { background: #F0EAF8; transform: translateY(-1px); }
+
+  .hero-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 11px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,0.40);
+    transition: background 160ms ease-out, border-color 160ms ease-out;
+  }
+
+  .hero-btn-ghost:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.70); }
+
+  /* Stats strip */
+  .home-stats-strip {
+    background: #3C1A5D;
+    padding: 18px 48px;
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .home-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .home-stat-number {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #BB9D65;
+    line-height: 1;
+  }
+
+  .home-stat-label {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.60);
+    font-weight: 300;
+  }
+
+  /* Feature cards */
+  .home-cards-section {
+    padding: 40px 48px;
+  }
+
+  .home-section-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #8A8A8A;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 20px;
+  }
+
+  .home-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .home-card {
+    background: white;
+    border-radius: 8px;
+    padding: 26px 24px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid rgba(0,0,0,0.10);
+    border-top: 3px solid #51247A;
+    transition: box-shadow 160ms ease-out, transform 160ms ease-out;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    opacity: 0;
+    animation: cardIn 0.3s ease-out forwards;
+  }
+
+  .home-card:nth-child(1) { animation-delay: 0.10s; }
+  .home-card:nth-child(2) { animation-delay: 0.16s; }
+  .home-card:nth-child(3) { animation-delay: 0.22s; }
+
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .home-card:hover { box-shadow: 0 4px 16px rgba(81,36,122,0.12); transform: translateY(-2px); }
+
+  .home-card-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: #51247A;
+    opacity: 0.60;
+    letter-spacing: 0.06em;
+  }
+
+  .home-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1C1C1C;
+    line-height: 1.2;
+    margin-top: 4px;
+  }
+
+  .home-card-desc {
+    font-size: 13.5px;
+    color: #5A5A5A;
+    line-height: 1.6;
+    font-weight: 300;
+    flex: 1;
+  }
+
+  .home-card-cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: #51247A;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+</style>
+
+<div class="home-hero">
+  <div class="home-hero-tag">
+    <div class="home-hero-dot"></div>
+    UQ Course Intelligence
+  </div>
+  <h1>Find your path.<br>Build your future.</h1>
+  <p class="home-hero-sub">SkillPath maps every UQ course to the real skills it builds — so you can plan your degree with confidence, not guesswork.</p>
+  <div class="home-hero-actions">
+    <a href="/courses/" class="hero-btn-primary">Browse courses</a>
+    <a href="/advisor/" class="hero-btn-ghost">Try AI advisor →</a>
+  </div>
+</div>
+
+<div class="home-stats-strip">
+  <div class="home-stat">
+    <span class="home-stat-number">{{ course_count|default:"15" }}</span>
+    <span class="home-stat-label">courses mapped</span>
+  </div>
+  <div class="home-stat">
+    <span class="home-stat-number">{{ skill_count|default:"25" }}</span>
+    <span class="home-stat-label">skills tracked</span>
+  </div>
+  <div class="home-stat">
+    <span class="home-stat-number">{{ career_count|default:"6" }}</span>
+    <span class="home-stat-label">career pathways</span>
+  </div>
+</div>
+
+<div class="home-cards-section">
+  <div class="home-section-label">What would you like to do?</div>
+  <div class="home-cards">
+
+    <a href="/courses/" class="home-card">
+      <div class="home-card-num">01 / EXPLORE</div>
+      <div class="home-card-title">Browse Courses</div>
+      <div class="home-card-desc">Search by skill, career outcome, or course code. Find the right elective for your goals before you enrol.</div>
+      <div class="home-card-cta">Start browsing <span>→</span></div>
+    </a>
+
+    <a href="/advisor/" class="home-card">
+      <div class="home-card-num">02 / AI</div>
+      <div class="home-card-title">AI Course Advisor</div>
+      <div class="home-card-desc">Describe your career goal in plain English and get personalised course recommendations powered by Gemini.</div>
+      <div class="home-card-cta">Get advice <span>→</span></div>
+    </a>
+
+    <a href="/validate/" class="home-card">
+      <div class="home-card-num">03 / VALIDATE</div>
+      <div class="home-card-title">Validate a Course</div>
+      <div class="home-card-desc">Already have a course in mind? Check how well its skills align with your target career before you commit.</div>
+      <div class="home-card-cta">Check fit <span>→</span></div>
+    </a>
+
+  </div>
+</div>
+
+{% endblock %}

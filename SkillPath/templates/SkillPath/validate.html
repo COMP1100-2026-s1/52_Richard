@@ -1,0 +1,124 @@
+{% extends "SkillPath/base.html" %}
+{% block nav_validate %}active</div>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Validate a course</h1>
+  <p>Check how well a course matches your career goal before you enrol.</p>
+</div>
+
+
+<div class="page-body">
+<!-- Form -->
+<form method="POST" action="/validate/">
+  {% csrf_token %}
+  <div style="display:grid; grid-template-columns:1fr 1fr auto; gap:12px; align-items:flex-end; margin-bottom:32px;">
+
+    <div>
+      <label style="font-size:13px; font-weight:500; color:var(--fg-disabled); display:block; margin-bottom:6px;">Select a course</label>
+      <select name="course" style="width:100%; padding:10px 14px; border:1px solid var(--border); border-radius:var(--radius-md); background:var(--surface); font-family:var(--font-sans); font-size:14px; color:var(--fg); outline:none;">
+        <option value="" disabled {% if not selected_course %}selected{% endif %}>Choose a course...</option>
+        {% for course in courses %}
+        <option value="{{ course.pk }}" {% if selected_course.pk == course.pk %}selected{% endif %}>
+          {{ course.code }} — {{ course.name }}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <label style="font-size:13px; font-weight:500; color:var(--fg-disabled); display:block; margin-bottom:6px;">Select a career goal</label>
+      <select name="career" style="width:100%; padding:10px 14px; border:1px solid var(--border); border-radius:var(--radius-md); background:var(--surface); font-family:var(--font-sans); font-size:14px; color:var(--fg); outline:none;">
+        <option value="" disabled {% if not selected_career %}selected{% endif %}>Choose a career...</option>
+        {% for career in careers %}
+        <option value="{{ career.pk }}" {% if selected_career.pk == career.pk %}selected{% endif %}>
+          {{ career.name }}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="height:42px;">Validate</button>
+
+  </div>
+</form>
+
+<!-- Results -->
+{% if selected_course and selected_career %}
+
+<div style="margin-bottom:28px;">
+
+  <!-- Match score banner -->
+  <div style="display:flex; align-items:center; gap:16px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px 24px; margin-bottom:20px;">
+    <div style="width:64px; height:64px; border-radius:50%; background:var(--accent-subtle); border:3px solid var(--accent); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+      <span style="font-size:18px; font-weight:700; color:var(--accent);">{{ match_score }}%</span>
+    </div>
+    <div>
+      <div style="font-size:17px; font-weight:600; margin-bottom:4px;">
+        {{ selected_course.name }} → {{ selected_career.name }}
+      </div>
+      <div style="font-size:14px; color:var(--fg-disabled);">
+        {% if match_score >= 75 %}
+          Strong match — this course covers most skills for this career.
+        {% elif match_score >= 40 %}
+          Partial match — this course covers some relevant skills.
+        {% else %}
+          Weak match — this course covers few skills needed for this career.
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills grid -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+
+    <!-- Matched skills -->
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px;">
+      <div style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent); margin-bottom:12px;">
+        Matched skills ({{ matched|length }})
+      </div>
+      {% for skill in matched %}
+      <div style="display:flex; align-items:flex-start; gap:10px; padding:10px 0; border-bottom:1px solid var(--border);">
+        <div style="width:8px; height:8px; border-radius:50%; background:var(--accent); flex-shrink:0; margin-top:5px;"></div>
+        <div>
+          <div style="font-size:14px; font-weight:500;">{{ skill.name }}</div>
+          <div style="font-size:12px; color:var(--fg-disabled); margin-top:2px;">{{ skill.description|truncatewords:10 }}</div>
+        </div>
+      </div>
+      {% empty %}
+      <div style="font-size:14px; color:var(--fg-disabled);">No matching skills.</div>
+      {% endfor %}
+    </div>
+
+    <!-- Missing skills -->
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px;">
+      <div style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:#C0392B; margin-bottom:12px;">
+        Skills gap ({{ missing|length }})
+      </div>
+      {% for skill in missing %}
+      <div style="display:flex; align-items:flex-start; gap:10px; padding:10px 0; border-bottom:1px solid var(--border);">
+        <div style="width:8px; height:8px; border-radius:50%; background:#F5C6C2; flex-shrink:0; margin-top:5px;"></div>
+        <div>
+          <div style="font-size:14px; font-weight:500;">{{ skill.name }}</div>
+          <div style="font-size:12px; color:var(--fg-disabled); margin-top:2px;">{{ skill.description|truncatewords:10 }}</div>
+        </div>
+      </div>
+      {% empty %}
+      <div style="font-size:14px; color:var(--fg-disabled);">No skill gaps — this course covers everything.</div>
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <!-- Action buttons -->
+  <div style="display:flex; gap:10px; margin-top:16px;">
+    <a href="/courses/{{ selected_course.pk }}/" class="btn btn-ghost">View course details</a>
+    <a href="/plan/add/{{ selected_course.pk }}/" class="btn btn-primary">Add to my plan</a>
+  </div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

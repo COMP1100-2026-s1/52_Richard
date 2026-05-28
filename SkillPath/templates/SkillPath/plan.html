@@ -1,0 +1,69 @@
+{% extends "SkillPath/base.html" %}
+{% block nav_plan %}active</div>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Saved courses</h1>
+  <p>{{ courses|length }} course{% if courses|length != 1 %}s{% endif %} in your plan</p>
+</div>
+
+
+<div class="page-body">
+{% if courses %}
+
+<div class="course-list">
+  {% for course in courses %}
+  <div class="course-card" style="flex-direction:row; align-items:flex-start; gap:20px;">
+
+    <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+      <div class="course-code">{{ course.code }} · {{ course.workload }}</div>
+      <a href="/courses/{{ course.pk }}/" style="text-decoration:none; color:inherit;">
+        <div class="course-name">{{ course.name }}</div>
+      </a>
+      <div class="course-description">{{ course.description|truncatewords:25 }}</div>
+      <div class="tags">
+        <span class="tag tag-difficulty {{ course.difficulty }}">{{ course.get_difficulty_display }}</span>
+        {% for skill in course.skills.all|slice:":3" %}
+        <span class="tag">{{ skill.name }}</span>
+        {% endfor %}
+        {% with total=course.skills.count %}
+        {% if total > 3 %}
+        <span class="tag-more">+{{ total|add:"-3" }} more</span>
+        {% endif %}
+        {% endwith %}
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:8px; flex-shrink:0; padding-top:4px;">
+      <a href="/courses/{{ course.pk }}/" class="btn btn-ghost">View details</a>
+      <a href="/plan/remove/{{ course.pk }}/" class="btn btn-danger">Remove</a>
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
+
+<div style="margin-top:32px; padding-top:24px; border-top:1px solid var(--border);">
+  <div style="font-size:14px; color:var(--fg-disabled); margin-bottom:16px;">
+    Skills you'll develop across all saved courses
+  </div>
+  <div class="tags">
+    {% for course in courses %}
+      {% for skill in course.skills.all %}
+      <span class="tag">{{ skill.name }}</span>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+
+{% else %}
+
+<div class="compare-empty" style="margin-top:24px;">
+  <p>No courses saved yet.</p>
+  <a href="/courses/" class="btn btn-ghost" style="margin-top:16px; display:inline-flex;">Browse courses</a>
+</div>
+
+{% endif %}
+
+{% endblock %}
