@@ -32,7 +32,11 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "five2-richard.onrender.com",
+]
 
 
 # Application definition
