@@ -3,6 +3,7 @@ Django==6.0.5
 python-dotenv==1.2.2
 google-genai>=1.0.0
 gunicorn==26.0.0
+whitenoise==6.12.0
 
 # Authentication
 django-allauth==65.3.0
