@@ -5,7 +5,7 @@
 {% block content %}
 <div class="page-header">
   <h1>Compare courses</h1>
-  <p>Differences are highlighted — green means better for that metric.</p>
+  <p>Differences are highlighted — amber means better for that metric.</p>
 </div>
 
 
@@ -20,14 +20,10 @@
   <div class="compare-table-header">
     <div class="compare-table-header-empty"></div>
     <div class="compare-course-header">
-      <div class="compare-course-code">{{ c0.code }}</div>
-      <div class="compare-course-name">{{ c0.name }}</div>
-      <div class="compare-course-school">{{ c0.workload }}</div>
+      <div class="compare-course-title">{{ c0.code }} &mdash; {{ c0.name }}</div>
     </div>
     <div class="compare-course-header">
-      <div class="compare-course-code">{{ c1.code }}</div>
-      <div class="compare-course-name">{{ c1.name }}</div>
-      <div class="compare-course-school">{{ c1.workload }}</div>
+      <div class="compare-course-title">{{ c1.code }} &mdash; {{ c1.name }}</div>
     </div>
   </div>
 
@@ -35,10 +31,10 @@
   <div class="compare-row">
     <div class="compare-row-label">Difficulty</div>
     <div class="compare-row-value {% if c0.difficulty == 'easy' and c1.difficulty != 'easy' %}better{% elif c0.difficulty == 'medium' and c1.difficulty == 'hard' %}better{% endif %}">
-      {{ c0.get_difficulty_display }}
+      {% if c0.difficulty == 'easy' and c1.difficulty != 'easy' %}<span class="better-icon">&#9650;</span>{% elif c0.difficulty == 'medium' and c1.difficulty == 'hard' %}<span class="better-icon">&#9650;</span>{% endif %}{{ c0.get_difficulty_display }}
     </div>
     <div class="compare-row-value {% if c1.difficulty == 'easy' and c0.difficulty != 'easy' %}better{% elif c1.difficulty == 'medium' and c0.difficulty == 'hard' %}better{% endif %}">
-      {{ c1.get_difficulty_display }}
+      {% if c1.difficulty == 'easy' and c0.difficulty != 'easy' %}<span class="better-icon">&#9650;</span>{% elif c1.difficulty == 'medium' and c0.difficulty == 'hard' %}<span class="better-icon">&#9650;</span>{% endif %}{{ c1.get_difficulty_display }}
     </div>
   </div>
 
@@ -60,10 +56,10 @@
   <div class="compare-row">
     <div class="compare-row-label">Peer rating</div>
     <div class="compare-row-value {% if c0.peer > c1.peer %}better{% endif %}">
-      {% if c0.peer > 0 %}{{ c0.peer }} / 5{% else %}Not rated{% endif %}
+      {% if c0.peer > c1.peer %}<span class="better-icon">&#9650;</span>{% endif %}{% if c0.peer > 0 %}{{ c0.peer }} / 5{% else %}Not rated{% endif %}
     </div>
     <div class="compare-row-value {% if c1.peer > c0.peer %}better{% endif %}">
-      {% if c1.peer > 0 %}{{ c1.peer }} / 5{% else %}Not rated{% endif %}
+      {% if c1.peer > c0.peer %}<span class="better-icon">&#9650;</span>{% endif %}{% if c1.peer > 0 %}{{ c1.peer }} / 5{% else %}Not rated{% endif %}
     </div>
   </div>
 
@@ -71,10 +67,10 @@
   <div class="compare-row">
     <div class="compare-row-label">Skills taught</div>
     <div class="compare-row-value {% if c0.skills.count > c1.skills.count %}better{% endif %}">
-      {{ c0.skills.count }} skill{% if c0.skills.count != 1 %}s{% endif %}
+      {% if c0.skills.count > c1.skills.count %}<span class="better-icon">&#9650;</span>{% endif %}{{ c0.skills.count }} skill{% if c0.skills.count != 1 %}s{% endif %}
     </div>
     <div class="compare-row-value {% if c1.skills.count > c0.skills.count %}better{% endif %}">
-      {{ c1.skills.count }} skill{% if c1.skills.count != 1 %}s{% endif %}
+      {% if c1.skills.count > c0.skills.count %}<span class="better-icon">&#9650;</span>{% endif %}{{ c1.skills.count }} skill{% if c1.skills.count != 1 %}s{% endif %}
     </div>
   </div>
 
@@ -82,20 +78,20 @@
   <div class="compare-row">
     <div class="compare-row-label">Prerequisites</div>
     <div class="compare-row-value {% if c0.prerequisites.count < c1.prerequisites.count %}better{% endif %}">
-      {% if c0.prerequisites.count == 0 %}None{% else %}{{ c0.prerequisites.count }}{% endif %}
+      {% if c0.prerequisites.count < c1.prerequisites.count %}<span class="better-icon">&#9650;</span>{% endif %}{% if c0.prerequisites.count == 0 %}None{% else %}{{ c0.prerequisites.count }} prereq{% if c0.prerequisites.count != 1 %}s{% endif %}{% endif %}
     </div>
     <div class="compare-row-value {% if c1.prerequisites.count < c0.prerequisites.count %}better{% endif %}">
-      {% if c1.prerequisites.count == 0 %}None{% else %}{{ c1.prerequisites.count }}{% endif %}
+      {% if c1.prerequisites.count < c0.prerequisites.count %}<span class="better-icon">&#9650;</span>{% endif %}{% if c1.prerequisites.count == 0 %}None{% else %}{{ c1.prerequisites.count }} prereq{% if c1.prerequisites.count != 1 %}s{% endif %}{% endif %}
     </div>
   </div>
 
 </div>
 
 <!-- Skills breakdown -->
-<h2 style="font-size:20px; font-weight:600; margin-bottom:16px;">Skills breakdown</h2>
+<h2 class="compare-section-heading">Skills breakdown</h2>
 <div class="skills-breakdown">
 
-  <div class="breakdown-col">
+  <div class="breakdown-col shared">
     <div class="breakdown-label shared">Shared skills</div>
     {% for skill in shared_skills %}
     <div class="breakdown-skill shared">{{ skill.name }}</div>
@@ -104,7 +100,7 @@
     {% endfor %}
   </div>
 
-  <div class="breakdown-col">
+  <div class="breakdown-col first">
     <div class="breakdown-label first">Only in {{ c0.code }}</div>
     {% for skill in only_first %}
     <div class="breakdown-skill first">{{ skill.name }}</div>
@@ -113,7 +109,7 @@
     {% endfor %}
   </div>
 
-  <div class="breakdown-col">
+  <div class="breakdown-col second">
     <div class="breakdown-label second">Only in {{ c1.code }}</div>
     {% for skill in only_second %}
     <div class="breakdown-skill second">{{ skill.name }}</div>
@@ -125,7 +121,7 @@
 </div>
 
 <!-- Career outcomes -->
-<h2 style="font-size:20px; font-weight:600; margin-bottom:16px;">Career outcomes</h2>
+<h2 class="compare-section-heading">Career outcomes</h2>
 <div class="career-outcomes-grid">
 
   <div class="career-outcomes-card">
@@ -149,7 +145,7 @@
 </div>
 
 <!-- Remove buttons -->
-<div style="display:flex; gap:12px; margin-top:8px;">
+<div class="compare-remove-section">
   <a href="/compare/remove/{{ c0.pk }}/" class="btn btn-danger">Remove {{ c0.code }}</a>
   <a href="/compare/remove/{{ c1.pk }}/" class="btn btn-danger">Remove {{ c1.code }}</a>
 </div>
@@ -163,9 +159,7 @@
   <div class="compare-table-header" style="grid-template-columns: 180px 1fr;">
     <div class="compare-table-header-empty"></div>
     <div class="compare-course-header">
-      <div class="compare-course-code">{{ c0.code }}</div>
-      <div class="compare-course-name">{{ c0.name }}</div>
-      <div class="compare-course-school">{{ c0.workload }}</div>
+      <div class="compare-course-title">{{ c0.code }} &mdash; {{ c0.name }}</div>
     </div>
   </div>
 </div>
