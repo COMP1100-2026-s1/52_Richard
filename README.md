@@ -36,30 +36,36 @@
 │   │   │       └── Learning Card - William (Iteration 1).md
 │   │   └── test_card/
 │   │       └── test_cards.md
-│   └── Iteration 2/
-│       ├── business_model_canvas.md
-│       ├── competitor_analysis.md
-│       ├── hypotheses_experiments.md
-│       ├── value_proposition_canvas.md
-│       ├── learning_card/
-│       │   ├── Learning_Card_Eddie_Zheng_En_Yung_Iteration_2.md
-│       │   ├── Learning_Card_Muhammad_Brian_Subekti_Iteration_2.md
-│       │   ├── Learning_Card_Pranusha_Iteration_2.md
-│       │   ├── Learning_card_William_iteration_2.md
-│       │   └── Jordan/
-│       │       ├── Interview Analysis - Jordan.md
-│       │       └── Learning Card - Jordan (Iteration 2).md
-│       ├── prototype/
-│       │   ├── Prototype Evalutation.pdf
-│       │   └── SkillPath Prototype - Standalone.html
-│       └── test_card/
-│           ├── test_card.md
-│           └── features_test_card/
-│               ├── test_card_feature1.md
-│               ├── test_card_feature2.md
-│               ├── test_card_feature3.md
-│               ├── test_card_feature4.md
-│               └── test_card_feature5.md
+│   ├── Iteration 2/
+│   │   ├── business_model_canvas.md
+│   │   ├── competitor_analysis.md
+│   │   ├── hypotheses_experiments.md
+│   │   ├── value_proposition_canvas.md
+│   │   ├── learning_card/
+│   │   │   ├── Learning_Card_Eddie_Zheng_En_Yung_Iteration_2.md
+│   │   │   ├── Learning_Card_Muhammad_Brian_Subekti_Iteration_2.md
+│   │   │   ├── Learning_Card_Pranusha_Iteration_2.md
+│   │   │   ├── Learning_card_William_iteration_2.md
+│   │   │   └── Jordan/
+│   │   │       ├── Interview Analysis - Jordan.md
+│   │   │       └── Learning Card - Jordan (Iteration 2).md
+│   │   ├── prototype/
+│   │   │   ├── Prototype Evalutation.pdf
+│   │   │   └── SkillPath Prototype - Standalone.html
+│   │   └── test_card/
+│   │       ├── test_card.md
+│   │       └── features_test_card/
+│   │           ├── test_card_feature1.md
+│   │           ├── test_card_feature2.md
+│   │           ├── test_card_feature3.md
+│   │           ├── test_card_feature4.md
+│   │           └── test_card_feature5.md
+│   └── Iteration 3/
+│       └── learning_card/
+│           ├── 1_minute_elavator_pitch.md
+│           ├── Combined_Learning_Card_Post_Prototype_Iteration_2.md
+│           ├── mvp_poster_1.png
+│           └── mvp_poster_2.png
 ├── Interviews/
 │   ├── Iteration_1/
 │   │   ├── Brian/
@@ -162,11 +168,32 @@
 │       ├── 11-05-2026.pdf
 │       └── video1189439663.mp4
 ├── SkillPath/                          # Django app
+│   ├── fixtures/
+│   │   └── sample_data.json
+│   ├── management/
+│   │   └── commands/
+│   │       └── seed_data.py
 │   ├── migrations/
+│   ├── static/
+│   │   └── SkillPath/
+│   │       └── style.css
+│   ├── templates/
+│   │   └── SkillPath/
+│   │       ├── advisor.html
+│   │       ├── base.html
+│   │       ├── career_list.html
+│   │       ├── compare.html
+│   │       ├── course_detail.html
+│   │       ├── course_list.html
+│   │       ├── index.html
+│   │       ├── plan.html
+│   │       ├── skill_tracker.html
+│   │       └── validate.html
 │   ├── admin.py
 │   ├── apps.py
 │   ├── models.py
 │   ├── tests.py
+│   ├── urls.py
 │   └── views.py
 ├── skillpath_project/                  # Django project settings
 │   ├── asgi.py
@@ -181,5 +208,5 @@
 ├── requirements.txt
 ├── RUNNING.md
 ├── SkillPath_Codebase_Overview.md
-└── team_values.md
+├── team_values.md
 ```
