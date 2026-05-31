@@ -10,6 +10,9 @@
 | Muhammad Brian   | Subekti   | s4980031       | MasterTapz      | <m.subekti@student.uq.edu.au>       |
 | Pranusha   | Shetty   | s5028127       | pranusha16      | <p.shetty@student.uq.edu.au>       |
 
+## Deployment URL
+https://five2-richard.onrender.com/
+
 ## Repository Structure
 
 ```
